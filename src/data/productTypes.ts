@@ -1,9 +1,13 @@
 export type ProductCategory =
-  | 'necklace'
-  | 'earrings'
-  | 'bracelet'
-  | 'ring'
-  | 'anklet'
+  | 'shirts'
+  | 'suits-blazers'
+  | 'ethnic-wear'
+
+export const productCategoryLabels: Record<ProductCategory, string> = {
+  shirts: 'Shirts',
+  'suits-blazers': 'Suits & Blazers',
+  'ethnic-wear': 'Ethnic Wear',
+}
 
 export type ProductImageGallery = readonly [string, ...string[]]
 
@@ -23,11 +27,10 @@ export interface ProductAttribute {
 }
 
 export type JewelleryOptionName =
-  | 'Ring Size'
-  | 'Finish'
+  | 'Size'
   | 'Color'
+  | 'Fit'
   | 'Length'
-  | 'Stone'
 
 export interface ProductVariantOption {
   id: string

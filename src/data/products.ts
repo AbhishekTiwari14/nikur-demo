@@ -9,351 +9,254 @@ interface ProductDefinition {
   id: string
   slug: string
   name: string
-  price: number | null
+  price: number
   category: ProductCategory
   description: string
   color: string
   images: ProductImageGallery
-  isDemoProduct: boolean
-  variantOptions?: readonly ProductVariantOption[]
-  source: SellableProduct['source']
+  sourceFiles: string
 }
 
+const standardSizes = [
+  {
+    id: 'size',
+    name: 'Size',
+    values: ['S', 'M', 'L', 'XL'],
+  },
+] as const satisfies readonly ProductVariantOption[]
+
 function defineProduct(definition: ProductDefinition): SellableProduct {
-  const { color, variantOptions, ...product } = definition
+  const { color, sourceFiles, ...product } = definition
 
   return {
     ...product,
     catalogueName: definition.name,
-    nameProvenance: definition.isDemoProduct
-      ? 'generated-demo'
-      : 'descriptive-working-label',
-    priceInPaise:
-      definition.price === null ? null : definition.price * 100,
-    priceStatus: definition.isDemoProduct ? 'demo' : 'unknown',
+    nameProvenance: 'generated-demo',
+    priceInPaise: definition.price * 100,
+    priceStatus: 'demo',
     attributes: [
       {
-        label: 'Visible appearance',
+        label: 'Colour',
         value: color,
-        evidence: definition.isDemoProduct
-          ? 'generated-demo'
-          : 'visual-source',
+        evidence: 'visual-source',
       },
     ],
-    variantOptions: variantOptions ?? [],
+    variantOptions: standardSizes,
+    isDemoProduct: true,
     status: 'sellable',
+    source: {
+      kind: 'generated-demo',
+      fileName: sourceFiles,
+      notes:
+        'Source-backed demo product. Website imagery and pricing were prepared for this private sales concept.',
+    },
   }
 }
+
+const imageRoot = '/images/mithel-kapoor/products'
 
 export const products = [
   defineProduct({
     id: 'jg-real-001',
-    slug: 'floral-drop-necklace',
-    name: 'Floral Drop Necklace',
-    price: 1_699,
-    category: 'necklace',
+    slug: 'silver-botanical-sherwani-set',
+    name: 'Silver Botanical Sherwani Set',
+    price: 5_999,
+    category: 'ethnic-wear',
     description:
-      'A delicate necklace with alternating clear teardrop and floral motifs, presented exactly as visible in the supplied Jewellgalleria source.',
-    color: 'Yellow-tone with clear details',
+      'A silver-grey occasion set with a structured band collar, botanical surface work, matching trousers, and a coordinating drape.',
+    color: 'Silver grey',
     images: [
-      '/products/real/floral-drop-necklace/hero.jpg',
-      '/products/real/floral-drop-necklace/detail-01.jpg',
-      '/products/real/floral-drop-necklace/editorial.jpg',
+      `${imageRoot}/silver-botanical-sherwani-set/hero.webp`,
+      `${imageRoot}/silver-botanical-sherwani-set/detail.webp`,
+      `${imageRoot}/silver-botanical-sherwani-set/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 045722.png',
-      notes:
-        'Descriptive working label only; official name and price are not supplied. Material, stone type, dimensions and rear closure are not established by the source.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 185514.png',
   }),
   defineProduct({
     id: 'jg-real-009',
-    slug: 'heritage-jhumka-earrings',
-    name: 'Heritage Jhumka Earrings',
-    price: 1_399,
-    category: 'earrings',
+    slug: 'midnight-embroidered-long-jacket',
+    name: 'Midnight Embroidered Long Jacket',
+    price: 5_499,
+    category: 'ethnic-wear',
     description:
-      'An ornate front-facing pair with red, green and clear decorative details, bell-shaped drops and layered bead fringe.',
-    color: 'Yellow-tone with red, green and clear details',
+      'A deep midnight occasion look with a high collar, elongated jacket, and pale geometric embroidery concentrated through the front and cuffs.',
+    color: 'Midnight navy',
     images: [
-      '/products/real/heritage-jhumka-earrings/hero.jpg',
-      '/products/real/heritage-jhumka-earrings/detail-01.jpg',
-      '/products/real/heritage-jhumka-earrings/editorial.jpg',
+      `${imageRoot}/midnight-embroidered-long-jacket/hero.webp`,
+      `${imageRoot}/midnight-embroidered-long-jacket/detail.webp`,
+      `${imageRoot}/midnight-embroidered-long-jacket/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 050015.png',
-      notes:
-        'Front view only. Official name and price, material, stones and fastening are not supplied.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 185536.png',
   }),
   defineProduct({
     id: 'jg-real-010',
-    slug: 'pear-drop-statement-necklace',
-    name: 'Pear Drop Statement Necklace',
-    price: 1_899,
-    category: 'necklace',
+    slug: 'ivory-shawl-collar-evening-blazer',
+    name: 'Ivory Shawl-Collar Evening Blazer',
+    price: 6_999,
+    category: 'suits-blazers',
     description:
-      'A symmetrical two-row necklace with clear square and pear-shaped elements, preserved from the supplied worn view.',
-    color: 'Yellow-tone with clear details',
+      'A clean ivory evening blazer defined by a broad shawl collar, sharp flap pockets, and a sculptural front fastening.',
+    color: 'Ivory',
     images: [
-      '/products/real/pear-drop-statement-necklace/hero.jpg',
-      '/products/real/pear-drop-statement-necklace/detail-01.jpg',
-      '/products/real/pear-drop-statement-necklace/editorial.jpg',
+      `${imageRoot}/ivory-shawl-collar-evening-blazer/hero.webp`,
+      `${imageRoot}/ivory-shawl-collar-evening-blazer/detail.webp`,
+      `${imageRoot}/ivory-shawl-collar-evening-blazer/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 050030.png',
-      notes:
-        'Front neckline view only. Official name and price, rear chain, clasp, materials and dimensions are not supplied.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 185650.png',
   }),
   defineProduct({
     id: 'jg-real-013',
-    slug: 'cascading-chandelier-earring',
-    name: 'Cascading Chandelier Earring',
-    price: 1_290,
-    category: 'earrings',
+    slug: 'textured-yoke-evening-shirt',
+    name: 'Textured Yoke Evening Shirt',
+    price: 1_799,
+    category: 'shirts',
     description:
-      'A long chandelier design with a floral top and articulated strands of clear pear-shaped and round elements.',
-    color: 'Pale-tone with clear details',
+      'A restrained evening shirt with a pointed collar, clean concealed front, and tonal texture across the upper body.',
+    color: 'Olive grey',
     images: [
-      '/products/real/cascading-chandelier-earring/hero.jpg',
-      '/products/real/cascading-chandelier-earring/detail-01.jpg',
-      '/products/real/cascading-chandelier-earring/editorial.jpg',
+      `${imageRoot}/textured-yoke-evening-shirt/hero.webp`,
+      `${imageRoot}/textured-yoke-evening-shirt/detail.webp`,
+      `${imageRoot}/textured-yoke-evening-shirt/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 050135.png',
-      notes:
-        'Only one worn earring is visible. Official name and price, pairing, fastening, materials and dimensions require seller confirmation.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 185704.png',
   }),
   defineProduct({
     id: 'jg-real-005',
-    slug: 'pearl-floral-ear-climber',
-    name: 'Pearl-Like Floral Ear Climber',
-    price: 1_690,
-    category: 'earrings',
+    slug: 'black-embroidered-evening-suit',
+    name: 'Black Embroidered Evening Suit',
+    price: 7_999,
+    category: 'suits-blazers',
     description:
-      'A diagonal ear piece combining clear floral and leaf-like elements with several luminous pearl-like round details.',
-    color: 'Pale-tone with clear and pearl-like details',
+      'A sharply tailored black evening suit with cool-silver botanical applique placed across the jacket front and sleeve.',
+    color: 'Black with silver detail',
     images: [
-      '/products/real/pearl-floral-ear-climber/hero.jpg',
-      '/products/real/pearl-floral-ear-climber/detail-01.jpg',
-      '/products/real/pearl-floral-ear-climber/editorial.jpg',
+      `${imageRoot}/black-embroidered-evening-suit/hero.webp`,
+      `${imageRoot}/black-embroidered-evening-suit/detail.webp`,
+      `${imageRoot}/black-embroidered-evening-suit/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 050321.png',
-      notes:
-        'Canonical duplicate of 045911. Official name and price are not supplied. Only one worn front view is visible; pearl and stone materials are not claimed.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 185732.png',
   }),
   defineProduct({
     id: 'jg-real-004',
-    slug: 'two-row-statement-ring',
-    name: 'Two-Row Statement Ring',
-    price: 1_090,
-    category: 'ring',
+    slug: 'navy-paisley-statement-shirt',
+    name: 'Navy Paisley Statement Shirt',
+    price: 2_499,
+    category: 'shirts',
     description:
-      'Two closely arranged rows of clear geometric elements, shown on the hand exactly as supplied.',
-    color: 'Pale-tone with clear details',
+      'A relaxed navy statement shirt with an open collar and oversized pale paisley motifs placed across the lower front.',
+    color: 'Navy with ivory detail',
     images: [
-      '/products/real/two-row-statement-ring/hero.jpg',
-      '/products/real/two-row-statement-ring/detail-01.jpg',
-      '/products/real/two-row-statement-ring/editorial.jpg',
+      `${imageRoot}/navy-paisley-statement-shirt/hero.webp`,
+      `${imageRoot}/navy-paisley-statement-shirt/detail.webp`,
+      `${imageRoot}/navy-paisley-statement-shirt/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 045854.png',
-      notes:
-        'Official name and price are not supplied. Seller confirmation is required on whether the visual is one multi-row ring or a coordinated stack. No hidden shank is reconstructed.',
-    },
+    sourceFiles:
+      'Screenshot 2026-08-24 185750.png; Screenshot 2026-08-24 185807.png',
   }),
   defineProduct({
     id: 'jg-real-011',
-    slug: 'solitaire-fan-earring',
-    name: 'Solitaire Fan Earring',
-    price: 1499,
-    category: 'earrings',
+    slug: 'embroidered-pinstripe-resort-shirt',
+    name: 'Embroidered Pinstripe Resort Shirt',
+    price: 2_299,
+    category: 'shirts',
     description:
-      'A large round clear stud above a shallow fan of five clear geometric drops, taken from the supplied worn view.',
-    color: 'Pale-tone with clear details',
+      'A light pinstripe resort shirt with an open collar and considered botanical embroidery across the chest and lower front.',
+    color: 'Pale blue with multicolour detail',
     images: [
-      '/products/real/solitaire-fan-earring/hero.jpg',
-      '/products/real/solitaire-fan-earring/detail-01.jpg',
-      '/products/real/solitaire-fan-earring/editorial.jpg',
+      `${imageRoot}/embroidered-pinstripe-resort-shirt/hero.webp`,
+      `${imageRoot}/embroidered-pinstripe-resort-shirt/detail.webp`,
+      `${imageRoot}/embroidered-pinstripe-resort-shirt/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 050053.png',
-      notes:
-        'Official name and price are not supplied. Only one worn front view is visible; pairing, fastening, materials and dimensions are not supplied.',
-    },
+    sourceFiles:
+      'Screenshot 2026-08-24 185825.png; Screenshot 2026-08-24 185846.png',
   }),
   defineProduct({
     id: 'jg-real-015',
-    slug: 'toggle-pendant-necklace',
-    name: 'Toggle Pendant Necklace',
-    price: 999,
-    category: 'necklace',
+    slug: 'ivory-multicolour-festive-kurta-set',
+    name: 'Ivory Multicolour Festive Kurta Set',
+    price: 3_499,
+    category: 'ethnic-wear',
     description:
-      'A circular-link necklace with a front toggle detail and an irregular luminous white centerpiece in a textured border.',
-    color: 'Yellow-tone with white centerpiece',
+      'An ivory festive kurta set with a band collar and multicolour motifs arranged through the placket, chest, sleeves, and body.',
+    color: 'Ivory with multicolour detail',
     images: [
-      '/products/real/toggle-pendant-necklace/hero.jpg',
-      '/products/real/toggle-pendant-necklace/detail-01.jpg',
-      '/products/real/toggle-pendant-necklace/editorial.jpg',
+      `${imageRoot}/ivory-multicolour-festive-kurta-set/hero.webp`,
+      `${imageRoot}/ivory-multicolour-festive-kurta-set/detail.webp`,
+      `${imageRoot}/ivory-multicolour-festive-kurta-set/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 050235.png',
-      notes:
-        'Official name and price are not supplied. The white centerpiece material, rear chain and dimensions are not established by the supplied view.',
-    },
+    sourceFiles:
+      'Screenshot 2026-08-24 185901.png; Screenshot 2026-08-24 185913.png; Screenshot 2026-08-24 185925.png',
   }),
   defineProduct({
     id: 'jg-real-006',
-    slug: 'multicolour-oval-bracelet',
-    name: 'Multicolour Oval Bracelet',
-    price: 1_199,
-    category: 'bracelet',
+    slug: 'black-sequinned-tuxedo',
+    name: 'Black Sequinned Tuxedo',
+    price: 8_999,
+    category: 'suits-blazers',
     description:
-      'A fine bracelet with alternating multicoloured oval settings, retained from the supplied wrist view.',
-    color: 'Yellow-tone with multicoloured details',
+      'A formal black tuxedo with a satin shawl lapel and a restrained sequinned surface that catches light without losing its clean line.',
+    color: 'Black',
     images: [
-      '/products/real/multicolour-oval-bracelet/hero.jpg',
-      '/products/real/multicolour-oval-bracelet/detail-01.jpg',
-      '/products/real/multicolour-oval-bracelet/editorial.jpg',
+      `${imageRoot}/black-sequinned-tuxedo/hero.webp`,
+      `${imageRoot}/black-sequinned-tuxedo/detail.webp`,
+      `${imageRoot}/black-sequinned-tuxedo/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 045927.png',
-      notes:
-        'Official name and price are not supplied. Only the visible front section is documented; clasp, materials and dimensions are not shown.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 190026.png',
   }),
   defineProduct({
     id: 'jg-real-008',
-    slug: 'oval-marquise-bracelet',
-    name: 'Oval and Marquise Bracelet',
-    price: 1_999,
-    category: 'bracelet',
+    slug: 'sage-embroidered-bandhgala',
+    name: 'Sage Embroidered Bandhgala',
+    price: 4_999,
+    category: 'ethnic-wear',
     description:
-      'A delicate bracelet of pale oval settings and paired marquise-shaped details with a small pink accent.',
-    color: 'Yellow-tone with pale and pink details',
+      'A closed-front sage bandhgala with a neat stand collar and dense tonal embroidery balanced by straight dark trousers.',
+    color: 'Sage green',
     images: [
-      '/products/real/oval-marquise-bracelet/hero.jpg',
-      '/products/real/oval-marquise-bracelet/detail-01.jpg',
-      '/products/real/oval-marquise-bracelet/editorial.jpg',
+      `${imageRoot}/sage-embroidered-bandhgala/hero.webp`,
+      `${imageRoot}/sage-embroidered-bandhgala/detail.webp`,
+      `${imageRoot}/sage-embroidered-bandhgala/editorial.webp`,
     ],
-    isDemoProduct: false,
-    source: {
-      kind: 'real-screenshot',
-      fileName: 'Screenshot 2026-08-17 045959.png',
-      notes:
-        'Official name and price are not supplied. Only the visible worn section is documented; clasp, materials and dimensions are not shown.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 190041.png',
   }),
   defineProduct({
     id: 'jg-demo-001',
-    slug: 'wave-station-ring',
-    name: 'Wave Station Ring',
-    price: 1_790,
-    category: 'ring',
+    slug: 'deep-plum-embroidered-festive-set',
+    name: 'Deep Plum Embroidered Festive Set',
+    price: 5_499,
+    category: 'ethnic-wear',
     description:
-      'A slender original wave-shaped demo ring with three clear round stations, created to add an everyday ring option to the private concept catalogue.',
-    color: 'Yellow-tone with clear details',
+      'A deep-plum festive set pairing a high-collar kurta with a long open jacket framed by pale geometric embroidery.',
+    color: 'Deep plum with ivory-gold detail',
     images: [
-      '/products/demo/wave-station-ring/hero.jpg',
-      '/products/demo/wave-station-ring/detail-01.jpg',
-      '/products/demo/wave-station-ring/detail-02.jpg',
-      '/products/demo/wave-station-ring/editorial.jpg',
+      `${imageRoot}/deep-plum-embroidered-festive-set/hero.webp`,
+      `${imageRoot}/deep-plum-embroidered-festive-set/detail.webp`,
+      `${imageRoot}/deep-plum-embroidered-festive-set/editorial.webp`,
     ],
-    isDemoProduct: true,
-    variantOptions: [
-      {
-        id: 'ring-size',
-        name: 'Ring Size',
-        values: ['6', '7', '8'],
-      },
-    ],
-    source: {
-      kind: 'generated-demo',
-      fileName: '_source.png',
-      notes:
-        'Fictional product created for catalogue depth. This is not an actual Jewellgalleria catalogue item.',
-    },
+    sourceFiles:
+      'Screenshot 2026-08-24 190106.png; Screenshot 2026-08-24 190119.png',
   }),
   defineProduct({
     id: 'jg-demo-002',
-    slug: 'asymmetric-stone-huggies',
-    name: 'Asymmetric Stone Huggies',
-    price: 1_490,
-    category: 'earrings',
+    slug: 'ivory-tonal-embroidered-sherwani-set',
+    name: 'Ivory Tonal Embroidered Sherwani Set',
+    price: 5_999,
+    category: 'ethnic-wear',
     description:
-      'An original pair of rounded everyday demo huggies with a restrained asymmetric line of clear details.',
-    color: 'Yellow-tone with clear details',
+      'An ivory sherwani set with a closed band collar, long structured front, tonal geometric-botanical embroidery, and coordinated draped trousers.',
+    color: 'Ivory with tonal beige detail',
     images: [
-      '/products/demo/asymmetric-stone-huggies/hero.jpg',
-      '/products/demo/asymmetric-stone-huggies/detail-01.jpg',
-      '/products/demo/asymmetric-stone-huggies/detail-02.jpg',
-      '/products/demo/asymmetric-stone-huggies/editorial.jpg',
+      `${imageRoot}/ivory-tonal-embroidered-sherwani-set/hero.webp`,
+      `${imageRoot}/ivory-tonal-embroidered-sherwani-set/detail.webp`,
+      `${imageRoot}/ivory-tonal-embroidered-sherwani-set/editorial.webp`,
     ],
-    isDemoProduct: true,
-    source: {
-      kind: 'generated-demo',
-      fileName: '_source.png',
-      notes:
-        'Fictional product created for catalogue depth. This is not an actual Jewellgalleria catalogue item.',
-    },
-  }),
-  defineProduct({
-    id: 'jg-demo-003',
-    slug: 'seven-station-anklet',
-    name: 'Seven Station Anklet',
-    price: 1_690,
-    category: 'anklet',
-    description:
-      'An original fine-chain demo anklet with seven evenly spaced clear stations and a visible clasp.',
-    color: 'Yellow-tone with clear details',
-    images: [
-      '/products/demo/seven-station-anklet/hero.jpg',
-      '/products/demo/seven-station-anklet/detail-01.jpg',
-      '/products/demo/seven-station-anklet/detail-02.jpg',
-      '/products/demo/seven-station-anklet/editorial.jpg',
-    ],
-    isDemoProduct: true,
-    variantOptions: [
-      {
-        id: 'length',
-        name: 'Length',
-        values: ['9 in', '10 in'],
-      },
-    ],
-    source: {
-      kind: 'generated-demo',
-      fileName: '_source.png',
-      notes:
-        'Fictional product created for catalogue depth. This is not an actual Jewellgalleria catalogue item.',
-    },
+    sourceFiles: 'Screenshot 2026-08-24 190210.png',
   }),
 ] as const satisfies readonly SellableProduct[]
 
 export const realProducts = products.filter((product) => !product.isDemoProduct)
 export const demoProducts = products.filter((product) => product.isDemoProduct)
-export const sellableProducts = [...realProducts, ...demoProducts]
+export const sellableProducts = [...products]
 
 export function findProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug)

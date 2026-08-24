@@ -106,7 +106,7 @@ export function BusinessInventoryPage() {
   return (
     <Container className="py-7 sm:py-10">
       <BusinessPageHeader
-        description="Edit simulated stock by product and jewellery variant. Products without variants use one standard inventory record."
+        description="Edit simulated stock by product and size variant. Products without variants use one standard inventory record."
         eyebrow="Inventory"
         title="Variant-level stock"
       />
@@ -182,7 +182,7 @@ export function BusinessInventoryPage() {
             <p className="text-sm font-bold text-ovia-ink">
               {selectedProduct.variantOptions.length === 0
                 ? 'Inventory record'
-                : 'Jewellery variant'}
+                : 'Product variant'}
             </p>
             <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-3" role="group" aria-label="Inventory variant">
               {availableSelections.map((selection) => {

@@ -1,4 +1,5 @@
 import type { CommerceProduct } from '../../data/productTypes'
+import { classNames } from '../../lib/classNames'
 import { ProductCard } from './ProductCard'
 
 interface ProductSectionProps {
@@ -41,7 +42,7 @@ export function ProductSection({
           )}
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10 md:grid-cols-4 md:gap-x-5 lg:gap-x-7 lg:gap-y-14">
+      <div className={classNames('grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10 md:gap-x-5 lg:gap-x-7 lg:gap-y-14', products.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4')}>
         {products.map((product, index) => (
           <ProductCard
             badge={badge}

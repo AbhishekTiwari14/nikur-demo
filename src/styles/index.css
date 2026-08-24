@@ -49,31 +49,33 @@ body {
   min-width: 20rem;
   min-height: 100vh;
   margin: 0;
-  background:
-    radial-gradient(circle at top right, rgb(127 23 50 / 0.035), transparent 28rem),
-    var(--color-ovia-ivory);
+  background: var(--color-ovia-ivory);
 }
 
 .customer-shell {
-  --color-ovia-primary: #7f1732;
-  --color-ovia-logo: #bea579;
-  --color-ovia-plum: #4b0b1e;
-  --color-ovia-blush: #eadbd0;
-  --color-ovia-ivory: #fbf7f0;
-  --color-ovia-ink: #2d2321;
-  --color-ovia-muted: #746761;
-  --color-ovia-line: #e4d8cf;
+  --color-ovia-primary: #1a1b18;
+  --color-ovia-logo: #a78956;
+  --color-ovia-plum: #10110f;
+  --color-ovia-blush: #e8e6df;
+  --color-ovia-ivory: #f7f6f2;
+  --color-ovia-ink: #1d1e1b;
+  --color-ovia-muted: #686961;
+  --color-ovia-line: #d9d7cf;
   --radius-control: 0.5rem;
-  --radius-card: 1rem;
+  --radius-card: 0.5rem;
   --radius-sheet: 1.25rem;
-  --shadow-card: 0 14px 38px rgb(75 11 30 / 0.07);
-  --shadow-floating: 0 24px 60px rgb(45 35 33 / 0.15);
+  --shadow-card: 0 14px 38px rgb(22 23 20 / 0.08);
+  --shadow-floating: 0 24px 60px rgb(18 19 17 / 0.16);
   color: var(--color-ovia-ink);
   background: var(--color-ovia-ivory);
 }
 
+.customer-shell * {
+  letter-spacing: 0;
+}
+
 .customer-shell :focus-visible {
-  outline-color: rgb(127 23 50 / 0.38);
+  outline-color: rgb(26 27 24 / 0.42);
 }
 
 .customer-shell ::selection {

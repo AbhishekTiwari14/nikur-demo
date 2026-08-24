@@ -33,47 +33,41 @@ import {
 } from '../../store/demoStore'
 
 const categories: Array<{ value: ProductCategory; label: string }> = [
-  { value: 'necklace', label: 'Necklace' },
-  { value: 'earrings', label: 'Earrings' },
-  { value: 'bracelet', label: 'Bracelet' },
-  { value: 'ring', label: 'Ring' },
-  { value: 'anklet', label: 'Anklet' },
+  { value: 'shirts', label: 'Shirts' },
+  { value: 'suits-blazers', label: 'Suits & Blazers' },
+  { value: 'ethnic-wear', label: 'Ethnic Wear' },
 ]
 
 const jewelleryOptionNames: JewelleryOptionName[] = [
-  'Ring Size',
-  'Finish',
+  'Size',
   'Color',
+  'Fit',
   'Length',
-  'Stone',
 ]
 
 const demoImages = [
   {
-    label: 'Wave station ring demo',
+    label: 'Black sequinned tuxedo',
     images: [
-      '/products/demo/wave-station-ring/hero.jpg',
-      '/products/demo/wave-station-ring/detail-01.jpg',
-      '/products/demo/wave-station-ring/detail-02.jpg',
-      '/products/demo/wave-station-ring/editorial.jpg',
+      '/images/mithel-kapoor/products/black-sequinned-tuxedo/hero.webp',
+      '/images/mithel-kapoor/products/black-sequinned-tuxedo/detail.webp',
+      '/images/mithel-kapoor/products/black-sequinned-tuxedo/editorial.webp',
     ],
   },
   {
-    label: 'Asymmetric stone huggies demo',
+    label: 'Navy paisley statement shirt',
     images: [
-      '/products/demo/asymmetric-stone-huggies/hero.jpg',
-      '/products/demo/asymmetric-stone-huggies/detail-01.jpg',
-      '/products/demo/asymmetric-stone-huggies/detail-02.jpg',
-      '/products/demo/asymmetric-stone-huggies/editorial.jpg',
+      '/images/mithel-kapoor/products/navy-paisley-statement-shirt/hero.webp',
+      '/images/mithel-kapoor/products/navy-paisley-statement-shirt/detail.webp',
+      '/images/mithel-kapoor/products/navy-paisley-statement-shirt/editorial.webp',
     ],
   },
   {
-    label: 'Seven station anklet demo',
+    label: 'Silver botanical sherwani set',
     images: [
-      '/products/demo/seven-station-anklet/hero.jpg',
-      '/products/demo/seven-station-anklet/detail-01.jpg',
-      '/products/demo/seven-station-anklet/detail-02.jpg',
-      '/products/demo/seven-station-anklet/editorial.jpg',
+      '/images/mithel-kapoor/products/silver-botanical-sherwani-set/hero.webp',
+      '/images/mithel-kapoor/products/silver-botanical-sherwani-set/detail.webp',
+      '/images/mithel-kapoor/products/silver-botanical-sherwani-set/editorial.webp',
     ],
   },
 ] as const
@@ -147,7 +141,7 @@ export function BusinessProductEditorPage() {
 
   const [name, setName] = useState(existingProduct?.catalogueName ?? '')
   const [category, setCategory] = useState<ProductCategory>(
-    existingProduct?.category ?? 'earrings',
+    existingProduct?.category ?? 'shirts',
   )
   const [price, setPrice] = useState(
     existingProduct?.priceInPaise === null || !existingProduct
@@ -453,7 +447,7 @@ export function BusinessProductEditorPage() {
       </Link>
 
       <BusinessPageHeader
-        description="Build a browser-only demo jewellery product with a complete image gallery and any relevant Ring Size, Finish, Color, Length, or Stone options."
+        description="Build a browser-only demo menswear product with a complete image gallery and any relevant size, colour, fit, or length options."
         eyebrow="Products"
         title={existingProduct ? `Edit ${existingProduct.catalogueName}` : 'Add a product'}
       />
@@ -472,7 +466,7 @@ export function BusinessProductEditorPage() {
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
               <label className="sm:col-span-2">
                 <span className="mb-2 block text-sm font-bold text-ovia-ink">Product name <span className="text-ovia-primary">*</span></span>
-                <input aria-invalid={Boolean(errors.name)} className={inputClasses} data-testid="product-name" maxLength={80} onChange={(event) => { setName(event.target.value); setErrors((current) => ({ ...current, name: undefined })) }} placeholder="e.g. Pearl Drop Earrings" value={name} />
+                <input aria-invalid={Boolean(errors.name)} className={inputClasses} data-testid="product-name" maxLength={80} onChange={(event) => { setName(event.target.value); setErrors((current) => ({ ...current, name: undefined })) }} placeholder="e.g. Embroidered Evening Shirt" value={name} />
                 {errors.name && <span className="mt-1.5 block text-xs text-red-700">{errors.name}</span>}
               </label>
               <label>
@@ -546,7 +540,7 @@ export function BusinessProductEditorPage() {
 
           <section className="rounded-card border border-ovia-line bg-white p-5 shadow-card sm:p-7">
             <p className="text-xs font-bold tracking-[0.12em] text-ovia-primary uppercase">Variants</p>
-            <h2 className="mt-2 font-display text-2xl text-ovia-ink">Flexible jewellery options</h2>
+            <h2 className="mt-2 font-display text-2xl text-ovia-ink">Flexible product options</h2>
             <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
               <p className="max-w-2xl text-sm leading-6 text-ovia-muted">Simple products need no options. Add one or more relevant groups to generate every stock combination automatically.</p>
               <button className="inline-flex min-h-11 items-center gap-2 rounded-full border border-ovia-primary px-4 text-sm font-bold text-ovia-primary hover:bg-ovia-blush/35 disabled:cursor-not-allowed disabled:opacity-45" data-testid="add-option-group" disabled={optionGroups.length === jewelleryOptionNames.length} onClick={addOptionGroup} type="button"><Plus aria-hidden="true" size={16} /> Add option</button>
@@ -564,7 +558,7 @@ export function BusinessProductEditorPage() {
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="text-xs font-bold tracking-[0.1em] text-ovia-primary uppercase">Option {groupIndex + 1}</p>
-                        <p className="mt-1 text-sm text-ovia-muted">Choose a jewellery option and add its available values.</p>
+                        <p className="mt-1 text-sm text-ovia-muted">Choose a product option and add its available values.</p>
                       </div>
                       <button aria-label={`Remove option ${groupIndex + 1}`} className="flex size-11 shrink-0 items-center justify-center rounded-full text-ovia-muted hover:bg-white hover:text-red-700" data-testid={`remove-option-group-${groupIndex}`} onClick={() => removeOptionGroup(group.key)} type="button"><X aria-hidden="true" size={18} /></button>
                     </div>
@@ -578,7 +572,7 @@ export function BusinessProductEditorPage() {
                       <div>
                         <label className="text-sm font-bold text-ovia-ink" htmlFor={`product-option-value-${group.key}`}>{group.name} values</label>
                         <div className="mt-2 flex gap-2">
-                          <input className={inputClasses} data-testid={`product-option-value-${groupIndex}`} id={`product-option-value-${group.key}`} onChange={(event) => updateOptionValueDraft(group.key, event.target.value)} onKeyDown={(event) => { if (event.key !== 'Enter') return; event.preventDefault(); addVariantValue(group.key) }} placeholder={group.name === 'Ring Size' ? 'e.g. 7' : 'Enter a value'} value={group.valueDraft} />
+                          <input className={inputClasses} data-testid={`product-option-value-${groupIndex}`} id={`product-option-value-${group.key}`} onChange={(event) => updateOptionValueDraft(group.key, event.target.value)} onKeyDown={(event) => { if (event.key !== 'Enter') return; event.preventDefault(); addVariantValue(group.key) }} placeholder={group.name === 'Size' ? 'e.g. M' : 'Enter a value'} value={group.valueDraft} />
                           <Button aria-label={`Add ${group.name} value`} data-testid={`add-option-value-${groupIndex}`} onClick={() => addVariantValue(group.key)} variant="secondary"><Plus aria-hidden="true" size={17} /></Button>
                         </div>
                         <div className="mt-3 flex min-h-11 flex-wrap gap-2" data-testid={`selected-option-values-${groupIndex}`}>

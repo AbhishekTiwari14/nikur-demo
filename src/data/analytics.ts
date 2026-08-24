@@ -57,16 +57,16 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
       {
         productId: 'jg-real-010',
         eyebrow: 'Product interest',
-        title: 'Pear Drop Statement Necklace is receiving the highest demo product views.',
+        title: 'Ivory Shawl-Collar Evening Blazer is receiving the highest demo product views.',
         description:
           'This illustrative signal uses fabricated browsing activity for the selected period.',
       },
       {
         productId: 'jg-real-008',
         eyebrow: 'Stock watch',
-        title: 'Oval and Marquise Bracelet is approaching its demo low-stock threshold.',
+        title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Jewellgalleria alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Mithel Kapoor alert.',
       },
       {
         productId: 'jg-real-009',
@@ -100,16 +100,16 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
       {
         productId: 'jg-real-009',
         eyebrow: 'Style momentum',
-        title: 'Heritage Jhumka Earrings is receiving the highest demo product views.',
+        title: 'Midnight Embroidered Long Jacket is receiving the highest demo product views.',
         description:
           'This illustrative signal uses fabricated browsing activity for the selected period.',
       },
       {
         productId: 'jg-real-008',
         eyebrow: 'Stock watch',
-        title: 'Oval and Marquise Bracelet is approaching its demo low-stock threshold.',
+        title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Jewellgalleria alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Mithel Kapoor alert.',
       },
       {
         productId: 'jg-real-001',
@@ -140,16 +140,16 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
       {
         productId: 'jg-real-010',
         eyebrow: 'Category interest',
-        title: 'Pear Drop Statement Necklace is receiving the highest demo product views.',
+        title: 'Ivory Shawl-Collar Evening Blazer is receiving the highest demo product views.',
         description:
           'This illustrative signal uses fabricated browsing activity for the selected period.',
       },
       {
         productId: 'jg-real-008',
         eyebrow: 'Stock watch',
-        title: 'Oval and Marquise Bracelet is approaching its demo low-stock threshold.',
+        title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Jewellgalleria alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Mithel Kapoor alert.',
       },
       {
         productId: 'jg-real-013',

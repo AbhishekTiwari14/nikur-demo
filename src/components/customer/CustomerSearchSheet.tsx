@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { sellableProducts } from '../../data/products'
-import { isProductActive } from '../../data/productTypes'
+import { isProductActive, productCategoryLabels } from '../../data/productTypes'
 import { formatInr } from '../../lib/currency'
 import { useDemoStore } from '../../store/demoStore'
 
@@ -24,7 +24,17 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
   const results = useMemo(() => {
     const normalized = query.trim().toLowerCase()
     return (normalized
-      ? products.filter((product) => product.catalogueName.toLowerCase().includes(normalized))
+      ? products.filter((product) =>
+          [
+            product.catalogueName,
+            productCategoryLabels[product.category],
+            product.description,
+            ...product.attributes.map((attribute) => attribute.value),
+          ]
+            .join(' ')
+            .toLowerCase()
+            .includes(normalized),
+        )
       : products.slice(0, 4)
     ).slice(0, 6)
   }, [products, query])
@@ -46,7 +56,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Search Jewellgalleria products">
+        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Search Mithel Kapoor products">
           <motion.button
             animate={{ opacity: 1 }}
             aria-label="Close search"
@@ -66,8 +76,8 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
             <div className="mx-auto max-w-xl">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="type-eyebrow">Find your next Jewellgalleria piece</p>
-                  <h2 className="mt-1.5 font-display text-3xl">Search Jewellgalleria</h2>
+                  <p className="type-eyebrow">Explore the collection</p>
+                  <h2 className="mt-1.5 font-display text-3xl">Search Mithel Kapoor</h2>
                 </div>
                 <button aria-label="Close search" className="flex size-12 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/55" onClick={onClose} type="button">
                   <X aria-hidden="true" size={21} />
@@ -81,7 +91,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
                   className="customer-search-input min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-ovia-muted/65"
                   data-testid="customer-search-input"
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Search necklaces, earrings, bracelets…"
+                  placeholder="Search shirts, tailoring, ethnic wear..."
                   type="search"
                   value={query}
                 />
@@ -98,7 +108,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
                     <ArrowRight aria-hidden="true" className="text-ovia-primary" size={17} />
                   </Link>
                 ))}
-                {results.length === 0 && <p className="py-10 text-center text-sm text-ovia-muted">No matching catalogue pieces found.</p>}
+                {results.length === 0 && <p className="py-10 text-center text-sm text-ovia-muted">No matching garments found.</p>}
               </div>
             </div>
           </motion.section>

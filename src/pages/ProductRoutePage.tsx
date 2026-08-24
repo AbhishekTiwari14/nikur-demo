@@ -7,7 +7,7 @@ import { ProductCard } from '../components/customer/ProductCard'
 import { ProductGallery } from '../components/customer/ProductGallery'
 import { Container } from '../components/layout/LayoutPrimitives'
 import { sellableProducts } from '../data/products'
-import { formatProductSelection, isDemoProduct, isProductActive, type ProductSelection } from '../data/productTypes'
+import { formatProductSelection, isProductActive, productCategoryLabels, type ProductSelection } from '../data/productTypes'
 import { classNames } from '../lib/classNames'
 import { formatInr } from '../lib/currency'
 import { useDemoStore } from '../store/demoStore'
@@ -66,7 +66,7 @@ function ConfirmationSheet({ image, isOpen, onClose, onViewBag, priceInPaise, pr
               <button aria-label="Close confirmation" className="flex size-11 items-center justify-center rounded-full text-ovia-muted hover:bg-ovia-blush/50" onClick={onClose} type="button"><X aria-hidden="true" size={21} /></button>
             </div>
             <div className="mt-5 grid grid-cols-[6rem_1fr] gap-4 sm:grid-cols-[7rem_1fr]">
-              <img alt="" className="aspect-[4/5] w-full bg-[#eee3dc] object-cover" src={image} />
+              <img alt="" className="aspect-[4/5] w-full bg-ovia-blush/55 object-cover" src={image} />
               <div className="min-w-0 py-1">
                 <p className="font-display text-xl leading-tight sm:text-2xl">{productName}</p>
                 <p className="mt-2 text-sm text-ovia-muted">{selectionLabel ? <span>{selectionLabel} · </span> : null}<span>Qty {quantity}</span></p>
@@ -105,6 +105,14 @@ export function ProductRoutePage() {
 
   useEffect(() => () => addToBagTimers.current.forEach(window.clearTimeout), [])
   useEffect(() => {
+    if (!product) return
+    const previousTitle = document.title
+    document.title = `${product.catalogueName} | Mithel Kapoor`
+    return () => {
+      document.title = previousTitle
+    }
+  }, [product])
+  useEffect(() => {
     const footer = document.querySelector('footer')
     if (!footer) return
 
@@ -118,10 +126,16 @@ export function ProductRoutePage() {
 
   const relatedProducts = useMemo(() => {
     if (!product || !isProductActive(product)) return []
-    return commerceProducts
-      .filter((item) => isProductActive(item) && item.id !== product.id && item.category === product.category)
-      .sort((left, right) => Number(left.isDemoProduct) - Number(right.isDemoProduct))
-      .slice(0, 4)
+    const availableProducts = commerceProducts.filter(
+      (item) => isProductActive(item) && item.id !== product.id,
+    )
+    const sameCategory = availableProducts.filter(
+      (item) => item.category === product.category,
+    )
+    const complementary = availableProducts.filter(
+      (item) => item.category !== product.category,
+    )
+    return [...sameCategory, ...complementary].slice(0, 4)
   }, [commerceProducts, product])
 
   if (!product || !isProductActive(product)) return <Navigate replace to="/" />
@@ -196,7 +210,7 @@ export function ProductRoutePage() {
             <ProductGallery images={product.images} isWishlisted={isWishlisted} key={product.id} onToggleWishlist={() => toggleWishlist(product.id)} productName={product.catalogueName} />
 
             <motion.div animate={{ opacity: 1, y: 0 }} className="px-4 pt-5 pb-9 sm:px-0 sm:pt-8 lg:sticky lg:top-24 lg:self-start lg:py-3" initial={{ opacity: 0, y: 14 }} transition={{ duration: 0.45, delay: 0.06 }}>
-              <p className="text-[0.66rem] font-bold tracking-[0.16em] text-ovia-primary uppercase">{isDemoProduct(product) ? 'Fictional demo product' : 'Jewellgalleria catalogue'}</p>
+              <p className="text-[0.66rem] font-bold text-ovia-primary uppercase">Mithel Kapoor catalogue</p>
               <h1 className="mt-2.5 max-w-xl font-display text-[2.25rem] leading-[0.96] tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]">{product.catalogueName}</h1>
 
               {hasKnownPrice ? (
@@ -212,7 +226,7 @@ export function ProductRoutePage() {
               )}
 
               <dl className="mt-6 grid grid-cols-2 border-y border-ovia-line text-sm">
-                <div className="py-4 pr-4"><dt className="text-xs text-ovia-muted">Product type</dt><dd className="mt-1.5 font-semibold capitalize">{product.category}</dd></div>
+                <div className="py-4 pr-4"><dt className="text-xs text-ovia-muted">Product type</dt><dd className="mt-1.5 font-semibold">{productCategoryLabels[product.category]}</dd></div>
                 {product.attributes.map((attribute) => (
                   <div className="border-l border-ovia-line py-4 pl-4" key={`${attribute.label}-${attribute.value}`}><dt className="text-xs text-ovia-muted">{attribute.label}</dt><dd className="mt-1.5 font-semibold">{attribute.value}</dd></div>
                 ))}
@@ -245,7 +259,7 @@ export function ProductRoutePage() {
                 </div>
               </div>
 
-              <button className="customer-primary-action mt-7 hidden min-h-14 w-full items-center justify-center gap-2 rounded-control bg-ovia-primary px-6 text-sm font-bold text-white shadow-[0_10px_24px_rgb(127_23_50/0.16)] hover:bg-ovia-plum disabled:cursor-not-allowed disabled:bg-ovia-muted/30 disabled:shadow-none lg:inline-flex" data-testid="add-to-bag" disabled={!canAddToBag || addToBagState !== 'idle'} onClick={handleAddToBag} type="button">
+              <button className="customer-primary-action mt-7 hidden min-h-14 w-full items-center justify-center gap-2 rounded-control bg-ovia-primary px-6 text-sm font-bold text-white shadow-[0_10px_24px_rgb(16_17_15/0.16)] hover:bg-ovia-plum disabled:cursor-not-allowed disabled:bg-ovia-muted/30 disabled:shadow-none lg:inline-flex" data-testid="add-to-bag" disabled={!canAddToBag || addToBagState !== 'idle'} onClick={handleAddToBag} type="button">
                 {addToBagState === 'added' ? <Check aria-hidden="true" size={19} /> : <ShoppingBag aria-hidden="true" size={19} />}{buttonLabel}
               </button>
               {unavailableReason && <p className="mt-2 hidden text-center text-xs leading-5 text-ovia-muted lg:block" role="status">{unavailableReason}</p>}
@@ -255,7 +269,7 @@ export function ProductRoutePage() {
                   <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold [&::-webkit-details-marker]:hidden">Product details<ChevronDown aria-hidden="true" className="transition-transform group-open:rotate-180" size={18} /></summary>
                   <div className="pb-5 text-sm leading-7 text-ovia-muted">
                     <p>{product.description}</p>
-                    {!product.isDemoProduct && <p className="mt-3 text-xs leading-5">Description is limited to details visible in the supplied Jewellgalleria source.</p>}
+                    <p className="mt-3 text-xs leading-5">Details are limited to the supplied Mithel Kapoor references.</p>
                   </div>
                 </details>
               </div>
@@ -276,13 +290,13 @@ export function ProductRoutePage() {
         )}
       </div>
 
-      <div className={classNames('fixed inset-x-0 bottom-0 z-50 border-t border-ovia-line bg-ovia-ivory/97 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-10px_30px_rgb(41_35_39/0.09)] backdrop-blur-xl transition-transform duration-300 lg:hidden', isFooterVisible && 'pointer-events-none translate-y-full')} data-testid="mobile-pdp-action-bar">
+      <div className={classNames('fixed inset-x-0 bottom-0 z-50 border-t border-ovia-line bg-ovia-ivory/97 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-10px_30px_rgb(16_17_15/0.1)] backdrop-blur-xl transition-transform duration-300 lg:hidden', isFooterVisible && 'pointer-events-none translate-y-full')} data-testid="mobile-pdp-action-bar">
         <div className="mx-auto flex max-w-lg items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-bold text-ovia-plum">{hasKnownPrice ? formatInr(product.priceInPaise) : 'Price unavailable'}</p>
             <p className="mt-0.5 truncate text-[0.68rem] text-ovia-muted">{!hasKnownPrice ? 'Official price not supplied' : missingOption ? `Select ${missingOption.name}` : selectionLabel || `Quantity ${quantity}`}</p>
           </div>
-          <button className="customer-primary-action inline-flex min-h-13 min-w-[9.75rem] items-center justify-center gap-2 rounded-control bg-ovia-primary px-5 text-sm font-bold text-white shadow-[0_7px_18px_rgb(127_23_50/0.16)] disabled:cursor-not-allowed disabled:bg-ovia-muted/30 disabled:shadow-none" data-testid="mobile-sticky-add-to-bag" disabled={!canAddToBag || addToBagState !== 'idle'} onClick={handleAddToBag} type="button">
+          <button className="customer-primary-action inline-flex min-h-13 min-w-[9.75rem] items-center justify-center gap-2 rounded-control bg-ovia-primary px-5 text-sm font-bold text-white shadow-[0_7px_18px_rgb(16_17_15/0.16)] disabled:cursor-not-allowed disabled:bg-ovia-muted/30 disabled:shadow-none" data-testid="mobile-sticky-add-to-bag" disabled={!canAddToBag || addToBagState !== 'idle'} onClick={handleAddToBag} type="button">
             {addToBagState === 'added' ? <Check aria-hidden="true" size={18} /> : <ShoppingBag aria-hidden="true" size={18} />}
             {addToBagState === 'adding' ? 'Adding…' : addToBagState === 'added' ? 'Added' : !hasKnownPrice ? 'Unavailable' : missingOption ? 'Select option' : 'Add to bag'}
           </button>

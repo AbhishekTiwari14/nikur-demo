@@ -23,7 +23,7 @@ export function FoundationPage({
       <Container>
         <div className="mx-auto flex min-h-[58vh] max-w-xl flex-col items-center justify-center text-center">
           <p className="mb-3 text-xs font-bold tracking-[0.14em] text-ovia-primary uppercase">
-            Jewellgalleria
+            Mithel Kapoor
           </p>
           <Heading>{title}</Heading>
           <Text className="mt-4" tone="muted">{description}</Text>
@@ -32,7 +32,7 @@ export function FoundationPage({
             to={area === 'business' ? '/business' : '/'}
           >
             <ArrowLeft aria-hidden="true" size={17} />
-            {area === 'business' ? 'Return to business' : 'Return to the Jewellgalleria edit'}
+            {area === 'business' ? 'Return to business' : 'Return to the Mithel Kapoor storefront'}
           </Link>
         </div>
       </Container>

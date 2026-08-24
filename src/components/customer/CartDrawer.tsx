@@ -69,7 +69,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
             type="button"
           />
           <motion.aside
-            className="absolute right-0 bottom-0 flex max-h-[92dvh] w-full flex-col rounded-t-sheet bg-ovia-ivory shadow-floating sm:top-0 sm:h-full sm:max-h-none sm:max-w-md sm:rounded-none sm:rounded-l-sheet"
+            className="absolute right-0 bottom-0 flex h-[92dvh] w-full flex-col rounded-t-sheet bg-ovia-ivory shadow-floating sm:top-0 sm:h-full sm:max-w-md sm:rounded-none sm:rounded-l-sheet"
             data-testid="cart-drawer"
             initial={prefersReducedMotion
               ? { opacity: 0 }
@@ -111,7 +111,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 </span>
                 <h3 className="mt-5 font-display text-2xl">Your bag is waiting</h3>
                 <p className="mt-2 max-w-xs text-sm leading-6 text-ovia-muted">
-                  Browse the Jewellgalleria catalogue and add a piece when you are ready.
+                  Browse the Mithel Kapoor collection and add a garment when you are ready.
                 </p>
                 <Link
                   className="mt-6 inline-flex min-h-11 items-center rounded-control bg-ovia-primary px-5 text-sm font-semibold text-white hover:bg-ovia-plum"

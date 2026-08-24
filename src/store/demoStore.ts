@@ -277,7 +277,7 @@ function createInitialOrders(): DemoOrder[] {
       items: [
         {
           productId: 'jg-demo-001',
-          selection: { 'ring-size': '7' },
+          selection: { size: 'M' },
           quantity: 1,
         },
       ],
@@ -312,7 +312,7 @@ function migratePersistedData(
   const defaults = createInitialDemoData()
 
   if (
-    (persistedVersion !== 2 && persistedVersion !== 3) ||
+    persistedVersion !== 4 ||
     !persistedState ||
     typeof persistedState !== 'object'
   ) {
@@ -552,7 +552,7 @@ export const useDemoStore = create<DemoStore>()(
     {
       name: 'jewellgalleria-demo:v1',
       storage: createJSONStorage(() => localStorage),
-      version: 3,
+      version: 4,
       migrate: (persistedState, persistedVersion) =>
         migratePersistedData(persistedState, persistedVersion),
       partialize: ({

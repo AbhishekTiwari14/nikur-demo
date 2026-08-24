@@ -73,13 +73,12 @@ export function BusinessRevealSection() {
         </div>
 
         <div className="relative" data-testid="business-reveal-preview">
-          <div aria-hidden="true" className="absolute -top-10 -right-10 size-44 rounded-full border border-ovia-logo/18" />
-          <div className="relative overflow-hidden rounded-[0.9rem] border border-white/12 bg-[#fbf7f0] text-ovia-ink shadow-[0_24px_58px_rgb(30_5_13/0.26)]">
+          <div className="relative overflow-hidden rounded-card border border-white/12 bg-ovia-ivory text-ovia-ink shadow-[0_24px_58px_rgb(16_17_15/0.28)]">
             <div className="flex items-center justify-between border-b border-ovia-line px-4 py-3.5 sm:px-5 sm:py-4">
               <div className="flex min-w-0 items-center gap-3">
-                <img alt="" className="size-9 shrink-0 object-cover" src="/brand/jewellgalleria-logo.png" />
+                <img alt="" className="size-9 shrink-0 object-contain mix-blend-multiply" src="/brand/mithel-kapoor-logo.png" />
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-bold text-ovia-ink">Jewellgalleria Business</p>
+                  <p className="truncate text-sm font-bold text-ovia-ink">Mithel Kapoor Business</p>
                   <p className="mt-0.5 text-[0.63rem] text-ovia-muted">Private operations preview</p>
                 </div>
               </div>
@@ -127,7 +126,7 @@ export function BusinessRevealSection() {
                         <div className={index === 0 ? 'flex items-center gap-2.5 px-3 py-2.5 sm:px-3.5' : 'hidden items-center gap-2.5 px-3.5 py-2.5 sm:flex'} key={order.id}>
                           {product && <img alt="" className="size-9 shrink-0 rounded-lg bg-ovia-ivory object-cover object-top" src={product.images[0]} />}
                           <div className="min-w-0 flex-1">
-                            <p className="truncate text-[0.65rem] font-bold text-ovia-ink">{product?.catalogueName ?? 'Jewellgalleria order'}</p>
+                            <p className="truncate text-[0.65rem] font-bold text-ovia-ink">{product?.catalogueName ?? 'Mithel Kapoor order'}</p>
                             <p className="mt-0.5 truncate text-[0.56rem] text-ovia-muted">{order.customerName} · {order.id}</p>
                           </div>
                           <span className="hidden sm:block"><OrderStatusBadge status={order.status} /></span>

@@ -30,7 +30,7 @@ export function CartPage() {
         </span>
         <h1 className="mt-6 font-display text-4xl tracking-[-0.03em] sm:text-5xl">Your bag is empty</h1>
         <p className="mt-3 max-w-md text-sm leading-6 text-ovia-muted sm:text-base">
-          Explore the Jewellgalleria catalogue and add a piece when you are ready.
+          Explore the Mithel Kapoor collection and add a garment when you are ready.
         </p>
         <Link
           className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-control bg-ovia-primary px-6 text-sm font-bold text-white hover:bg-ovia-plum"
@@ -69,10 +69,6 @@ export function CartPage() {
             <div className="flex items-center justify-between gap-4">
               <dt className="text-ovia-muted">Subtotal</dt>
               <dd className="font-semibold">{formatInr(subtotal)}</dd>
-            </div>
-            <div className="flex items-center justify-between gap-4">
-              <dt className="text-ovia-muted">Delivery</dt>
-              <dd className="font-semibold">Calculated at checkout</dd>
             </div>
             <div className="flex items-center justify-between gap-4 border-t border-ovia-line pt-4">
               <dt className="font-semibold">Estimated total</dt>

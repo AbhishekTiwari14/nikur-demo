@@ -75,7 +75,7 @@ export function BusinessDashboardPage() {
       <BusinessPageHeader
         description="A simulated view of the storefront, fulfilment queue, and stock requiring attention. All figures are demo data."
         eyebrow="Dashboard"
-        title="Good morning, Jewellgalleria"
+        title="Good morning, Mithel Kapoor"
       />
 
       <section aria-label="Business metrics" className="mt-6 grid grid-cols-2 gap-3 xl:grid-cols-5">

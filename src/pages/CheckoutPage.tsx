@@ -46,7 +46,7 @@ function OrderSummary({ cart, commerceProducts, subtotal }: OrderSummaryProps) {
               <div className="relative">
                 <img
                   alt=""
-                  className="aspect-[4/5] w-full bg-[#eee3dc] object-cover"
+                  className="aspect-[4/5] w-full bg-ovia-blush/55 object-cover"
                   src={product.images[0]}
                 />
                 <span className="absolute -top-1.5 -right-1.5 flex min-h-5 min-w-5 items-center justify-center rounded-full bg-ovia-plum px-1 text-[0.62rem] font-bold text-white">
@@ -75,10 +75,6 @@ function OrderSummary({ cart, commerceProducts, subtotal }: OrderSummaryProps) {
           <dt className="text-ovia-muted">Subtotal</dt>
           <dd>{formatInr(subtotal)}</dd>
         </div>
-        <div className="flex justify-between gap-4">
-          <dt className="text-ovia-muted">Delivery</dt>
-          <dd>Not calculated in demo</dd>
-        </div>
         <div className="flex justify-between gap-4 border-t border-ovia-line pt-4">
           <dt className="font-semibold">Demo total</dt>
           <dd className="font-display text-2xl text-ovia-plum">
@@ -101,7 +97,7 @@ function OrderConfirmation({ commerceProducts, order }: OrderConfirmationProps) 
   return (
     <motion.div
       animate={{ opacity: 1 }}
-      className="min-h-[75vh] bg-[#f5ede6]"
+      className="min-h-[75vh] bg-ovia-blush/30"
       data-testid="checkout-success"
       initial={{ opacity: 0 }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
@@ -110,7 +106,7 @@ function OrderConfirmation({ commerceProducts, order }: OrderConfirmationProps) 
         <div className="mx-auto max-w-2xl text-center">
           <motion.span
             animate={{ opacity: 1, scale: 1 }}
-            className="mx-auto flex size-18 items-center justify-center rounded-full bg-ovia-primary text-white shadow-[0_16px_35px_rgb(123_18_48/0.2)]"
+            className="mx-auto flex size-18 items-center justify-center rounded-full bg-ovia-primary text-white shadow-[0_16px_35px_rgb(16_17_15/0.2)]"
             initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.94 }}
             transition={
               prefersReducedMotion
@@ -163,7 +159,7 @@ function OrderConfirmation({ commerceProducts, order }: OrderConfirmationProps) 
                   data-testid={`success-order-item-${product.slug}`}
                   key={`${item.productId}-${JSON.stringify(item.selection)}`}
                 >
-                  <img alt="" className="aspect-[4/5] w-full bg-[#eee3dc] object-cover" src={product.images[0]} />
+                  <img alt="" className="aspect-[4/5] w-full bg-ovia-blush/55 object-cover" src={product.images[0]} />
                   <div className="min-w-0">
                     <p className="text-sm leading-snug font-semibold">{product.catalogueName}</p>
                     <p className="mt-1 text-xs leading-5 text-ovia-muted">
@@ -276,7 +272,7 @@ export function CheckoutPage() {
   }
 
   return (
-    <div className="bg-[#fffdfb]">
+    <div className="bg-white/55">
       <Container className="py-5 sm:py-9 lg:py-14">
         <Link className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ovia-muted hover:text-ovia-primary" to="/cart">
           <ArrowLeft aria-hidden="true" size={16} />
@@ -351,7 +347,7 @@ export function CheckoutPage() {
                     <p className="text-[0.68rem] text-ovia-muted">Demo total</p>
                     <p className="truncate text-base font-bold text-ovia-plum">{formatInr(subtotal)}</p>
                   </div>
-                  <button className="customer-primary-action min-h-13 min-w-[11rem] rounded-control bg-ovia-primary px-5 text-sm font-bold text-white shadow-[0_8px_22px_rgb(127_23_50/0.18)] disabled:cursor-wait disabled:opacity-65" data-testid="mobile-place-demo-order" disabled={isSubmitting} type="submit">
+                  <button className="customer-primary-action min-h-13 min-w-[11rem] rounded-control bg-ovia-primary px-5 text-sm font-bold text-white shadow-[0_8px_22px_rgb(16_17_15/0.18)] disabled:cursor-wait disabled:opacity-65" data-testid="mobile-place-demo-order" disabled={isSubmitting} type="submit">
                     {isSubmitting ? 'Placing…' : 'Place Demo Order'}
                   </button>
                 </div>

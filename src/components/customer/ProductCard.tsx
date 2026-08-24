@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import {
   formatProductSelection,
   getDefaultSelection,
+  productCategoryLabels,
   type CommerceProduct,
 } from '../../data/productTypes'
 import { formatInr } from '../../lib/currency'
@@ -67,7 +68,7 @@ export function ProductCard({
     <article
       className={classNames('group min-w-0', variant === 'featured' && 'lg:grid lg:grid-cols-[1fr_15rem] lg:items-end lg:gap-7')}
     >
-      <div className="relative overflow-hidden bg-[#f1e8e2]">
+      <div className="relative overflow-hidden bg-ovia-blush/55">
         <Link
           aria-label={`View ${product.catalogueName}`}
           className="block overflow-hidden"
@@ -133,8 +134,8 @@ export function ProductCard({
             {formatInr(product.priceInPaise)}
           </p>
         )}
-        <p className="mt-1.5 text-[0.7rem] tracking-[0.03em] text-ovia-muted capitalize sm:mt-2 sm:text-xs">
-          {product.category}
+        <p className="mt-1.5 text-[0.7rem] text-ovia-muted sm:mt-2 sm:text-xs">
+          {productCategoryLabels[product.category]}
         </p>
       </div>
     </article>

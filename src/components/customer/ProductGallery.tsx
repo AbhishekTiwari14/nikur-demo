@@ -118,11 +118,11 @@ export function ProductGallery({
   return (
     <>
       <div className="min-w-0 md:mx-auto md:w-full md:max-w-[30rem] lg:hidden">
-        <div className="relative bg-[#eee3dc] sm:rounded-[1.25rem]">
+        <div className="relative bg-ovia-blush/55 sm:rounded-card">
           {wishlistButton}
           <div
             aria-label={`${productName} image gallery`}
-            className="scrollbar-none flex snap-x snap-mandatory overflow-x-auto scroll-smooth overscroll-x-contain sm:rounded-[1.25rem]"
+            className="scrollbar-none flex snap-x snap-mandatory overflow-x-auto scroll-smooth overscroll-x-contain sm:rounded-card"
             data-testid="mobile-gallery-track"
             onScroll={handleGalleryScroll}
             ref={mobileTrackRef}
@@ -130,7 +130,7 @@ export function ProductGallery({
             {images.map((image, index) => (
               <button
                 aria-label={`Open image ${index + 1} of ${images.length}`}
-                className="relative aspect-[5/6] w-full shrink-0 snap-center snap-always overflow-hidden bg-[#eee3dc]"
+                className="relative aspect-[4/5] w-full shrink-0 snap-center snap-always overflow-hidden bg-ovia-blush/55"
                 data-testid={`gallery-slide-${index + 1}`}
                 key={image}
                 onClick={() => openLightbox(index)}
@@ -138,7 +138,7 @@ export function ProductGallery({
               >
                 <img
                   alt={`${productName}, view ${index + 1}`}
-                  className="size-full object-contain"
+                  className="size-full object-cover"
                   draggable="false"
                   fetchPriority={index === 0 ? 'high' : 'auto'}
                   loading={index === 0 ? 'eager' : 'lazy'}
@@ -192,7 +192,7 @@ export function ProductGallery({
               aria-label={`Show image ${index + 1}`}
               aria-pressed={activeIndex === index}
               className={classNames(
-                'aspect-[4/5] w-full overflow-hidden border-2 bg-[#eee3dc] transition-[border-color,opacity] duration-200',
+                'aspect-[4/5] w-full overflow-hidden border-2 bg-ovia-blush/55 transition-[border-color,opacity] duration-200',
                 activeIndex === index
                   ? 'border-ovia-primary opacity-100'
                   : 'border-transparent opacity-65 hover:opacity-100',
@@ -209,7 +209,7 @@ export function ProductGallery({
 
         <motion.div
           animate={{ opacity: 1 }}
-          className="relative overflow-hidden bg-[#eee3dc]"
+          className="relative overflow-hidden bg-ovia-blush/55"
           initial={{ opacity: 0 }}
           transition={{ duration: prefersReducedMotion ? 0 : 0.35 }}
         >
@@ -225,7 +225,7 @@ export function ProductGallery({
               <motion.img
                 alt={`${productName}, view ${activeIndex + 1}`}
                 animate={{ opacity: 1 }}
-                className="size-full object-contain"
+                className="size-full object-cover"
                 initial={{ opacity: 0.3 }}
                 key={images[activeIndex]}
                 src={images[activeIndex]}
@@ -245,7 +245,7 @@ export function ProductGallery({
             animate={{ opacity: 1 }}
             aria-label={`${productName} full-screen gallery`}
             aria-modal="true"
-            className="fixed inset-0 z-100 touch-pan-x overscroll-none bg-[#16080c] text-white"
+            className="fixed inset-0 z-100 touch-pan-x overscroll-none bg-[#0b0c0a] text-white"
             data-testid="product-lightbox"
             exit={{ opacity: 0 }}
             initial={{ opacity: 0 }}

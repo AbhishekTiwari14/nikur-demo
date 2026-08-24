@@ -19,11 +19,9 @@ import { formatInr } from '../../lib/currency'
 import { useDemoStore } from '../../store/demoStore'
 
 const categoryLabels = {
-  necklace: 'Necklace',
-  earrings: 'Earrings',
-  bracelet: 'Bracelet',
-  ring: 'Ring',
-  anklet: 'Anklet',
+  shirts: 'Shirts',
+  'suits-blazers': 'Suits & Blazers',
+  'ethnic-wear': 'Ethnic Wear',
 } as const
 
 function ProductRow({
@@ -141,7 +139,7 @@ export function BusinessProductsPage() {
             <Plus aria-hidden="true" size={18} /> Add Product
           </Link>
         )}
-        description="Manage Jewellgalleria’s source-backed catalogue and clearly marked demo products with structured variant stock."
+        description="Manage Mithel Kapoor's source-backed demo catalogue with structured size-level stock."
         eyebrow="Products"
         title="Catalogue overview"
       />

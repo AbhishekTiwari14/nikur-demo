@@ -18,6 +18,7 @@ export interface HeroSlide {
   headline: string
   copy: string
   cta: string
+  imageIndex?: number
   mobileObjectPosition: string
   desktopObjectPosition: string
 }
@@ -49,6 +50,9 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
   const touchStart = useRef<{ x: number; y: number } | null>(null)
   const blockSlideClick = useRef(false)
   const activeSlide = slides[activeIndex] ?? slides[0]
+  const activeImage =
+    activeSlide.product.images[activeSlide.imageIndex ?? 0] ??
+    activeSlide.product.images[0]
 
   useEffect(() => {
     if (prefersReducedMotion || hasUserInteracted || slides.length < 2) return
@@ -105,9 +109,9 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
 
   return (
     <section
-      aria-label="Jewellgalleria featured jewellery"
+      aria-label="Mithel Kapoor featured menswear"
       aria-roledescription="carousel"
-      className="relative h-[min(66svh,34rem)] min-h-[29.5rem] overflow-hidden bg-ovia-plum focus-visible:outline focus-visible:outline-3 focus-visible:-outline-offset-3 xs:min-h-[31rem] lg:h-[calc(100svh-5rem)] lg:min-h-160 lg:max-h-190"
+      className="relative h-[min(72svh,38rem)] min-h-[32rem] overflow-hidden bg-ovia-plum focus-visible:outline focus-visible:outline-3 focus-visible:-outline-offset-3 lg:h-[min(78svh,48rem)] lg:min-h-[38rem]"
       data-testid="home-hero-carousel"
       onKeyDown={handleKeyDown}
       onTouchCancel={() => {
@@ -151,7 +155,7 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
                 scale: prefersReducedMotion ? 1 : 1.025,
                 x: prefersReducedMotion ? 0 : direction * 6,
               }}
-              src={activeSlide.product.images[0]}
+              src={activeImage}
               style={
                 {
                   '--hero-mobile-position': activeSlide.mobileObjectPosition,
@@ -162,7 +166,7 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
                 ease: transitionEase,
               }}
             />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgb(45_19_27/0.08)_18%,transparent_42%,rgb(38_10_19/0.88)_100%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgb(16_17_15/0.05)_18%,transparent_42%,rgb(16_17_15/0.9)_100%)]" />
             <div className="pointer-events-none absolute inset-x-5 bottom-12 z-10 max-w-[20rem] text-white xs:bottom-14">
               <p className="text-[0.62rem] font-bold tracking-[0.16em] text-white/74 uppercase">
                 {activeSlide.product.catalogueName}
@@ -180,11 +184,32 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
             </div>
           </div>
 
-          <div className="hidden size-full grid-cols-[0.4fr_0.6fr] lg:grid">
-            <div className="relative flex items-center bg-ovia-plum px-[clamp(3rem,6vw,7.5rem)] py-18 text-white">
+          <div className="relative hidden size-full overflow-hidden bg-ovia-plum lg:block">
+            <motion.img
+              alt={activeSlide.product.catalogueName}
+              animate={{ scale: 1, x: 0 }}
+              className="absolute inset-0 size-full object-cover [object-position:var(--hero-desktop-position)]"
+              fetchPriority={activeIndex === 0 ? 'high' : 'auto'}
+              initial={{
+                scale: prefersReducedMotion ? 1 : 1.02,
+                x: prefersReducedMotion ? 0 : direction * 8,
+              }}
+              src={activeImage}
+              style={
+                {
+                  '--hero-desktop-position': activeSlide.desktopObjectPosition,
+                } as CSSProperties
+              }
+              transition={{
+                duration: prefersReducedMotion ? 0 : 0.72,
+                ease: transitionEase,
+              }}
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgb(16_17_15/0.88)_0%,rgb(16_17_15/0.64)_34%,rgb(16_17_15/0.08)_72%)]" />
+            <div className="relative mx-auto flex size-full w-full max-w-360 items-center px-8 text-white">
               <motion.div
                 animate={{ opacity: 1, y: 0 }}
-                className="relative z-10 max-w-xl"
+                className="relative z-10 max-w-lg"
                 initial={{
                   opacity: 0,
                   y: prefersReducedMotion ? 0 : 12,
@@ -198,7 +223,7 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
                 <p className="text-[0.67rem] font-bold tracking-[0.18em] text-ovia-logo uppercase">
                   {activeSlide.product.catalogueName}
                 </p>
-                <h1 className="mt-5 max-w-[9ch] font-display text-[clamp(4rem,6vw,6.5rem)] leading-[0.86] font-medium tracking-[-0.045em]">
+                <h1 className="mt-5 max-w-[10ch] font-display text-6xl leading-[0.9] font-medium xl:text-7xl">
                   {activeSlide.headline}
                 </h1>
                 <p className="mt-7 max-w-sm text-base leading-7 text-white/72">
@@ -209,36 +234,6 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
                   <ArrowRight aria-hidden="true" size={15} />
                 </span>
               </motion.div>
-              <span className="pointer-events-none absolute top-8 left-8 font-display text-8xl text-white/[0.035]">
-                JG
-              </span>
-            </div>
-
-            <div className="relative overflow-hidden bg-[#ddc9bd]">
-              <motion.img
-                alt={activeSlide.product.catalogueName}
-                animate={{ scale: 1, x: 0 }}
-                className="size-full object-cover [object-position:var(--hero-desktop-position)]"
-                fetchPriority={activeIndex === 0 ? 'high' : 'auto'}
-                initial={{
-                  scale: prefersReducedMotion ? 1 : 1.025,
-                  x: prefersReducedMotion ? 0 : direction * 8,
-                }}
-                src={activeSlide.product.images[0]}
-                style={
-                  {
-                    '--hero-desktop-position': activeSlide.desktopObjectPosition,
-                  } as CSSProperties
-                }
-                transition={{
-                  duration: prefersReducedMotion ? 0 : 0.72,
-                  ease: transitionEase,
-                }}
-              />
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-ovia-plum/18 to-transparent" />
-              <span className="pointer-events-none absolute top-7 right-8 font-display text-7xl text-white/65">
-                0{activeIndex + 1}
-              </span>
             </div>
           </div>
 

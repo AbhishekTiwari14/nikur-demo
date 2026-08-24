@@ -78,7 +78,7 @@ export function CustomerLayout() {
           'sticky top-0 z-40 border-b transition-[background-color,border-color,box-shadow] duration-300',
           integratedHeader
             ? 'border-transparent bg-ovia-ivory/78 backdrop-blur-md'
-            : 'border-ovia-line/85 bg-ovia-ivory/96 shadow-[0_5px_22px_rgb(41_35_39/0.045)] backdrop-blur-xl',
+            : 'border-ovia-line/85 bg-ovia-ivory/96 shadow-[0_5px_22px_rgb(16_17_15/0.06)] backdrop-blur-xl',
         )}
         data-header-state={integratedHeader ? 'integrated' : 'solid'}
       >
@@ -86,11 +86,12 @@ export function CustomerLayout() {
           <button aria-label="Open navigation" className="flex size-11 items-center justify-center rounded-full text-ovia-plum transition-colors hover:bg-ovia-blush/50" data-testid="mobile-menu-trigger" onClick={() => setIsMenuOpen(true)} type="button">
             <Menu aria-hidden="true" size={22} />
           </button>
-          <Link aria-label="Jewellgalleria home" className="absolute left-1/2 -translate-x-1/2" to="/">
-            <img alt="Jewellgalleria" className="size-11 object-cover" height="44" src="/brand/jewellgalleria-logo.png" width="44" />
+          <Link aria-label="Mithel Kapoor home" className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap" to="/">
+            <img alt="" className="size-8 object-contain mix-blend-multiply" height="32" src="/brand/mithel-kapoor-logo.png" width="32" />
+            <span className="text-[0.7rem] font-semibold uppercase">Mithel Kapoor</span>
           </Link>
           <div className="flex items-center">
-            <button aria-label="Search Jewellgalleria products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum transition-colors hover:bg-ovia-blush/50" data-testid="mobile-search-trigger" onClick={() => setIsSearchOpen(true)} type="button">
+            <button aria-label="Search Mithel Kapoor products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum transition-colors hover:bg-ovia-blush/50" data-testid="mobile-search-trigger" onClick={() => setIsSearchOpen(true)} type="button">
               <Search aria-hidden="true" size={20} />
             </button>
             <BagButton cartCount={cartCount} dataTestId="header-bag-button" onOpen={() => setIsCartOpen(true)} reducedMotion={prefersReducedMotion} />
@@ -98,15 +99,15 @@ export function CustomerLayout() {
         </Container>
 
         <Container className="hidden min-h-20 items-center justify-between gap-5 lg:flex">
-          <Link aria-label="Jewellgalleria home" className="flex items-center gap-3" to="/"><img alt="" className="size-13 object-cover" height="52" src="/brand/jewellgalleria-logo.png" width="52" /><span className="font-display text-[1.45rem] tracking-[0.02em] text-ovia-plum">Jewellgalleria</span></Link>
+          <Link aria-label="Mithel Kapoor home" className="flex items-center gap-2.5" to="/"><img alt="" className="size-11 object-contain mix-blend-multiply" height="44" src="/brand/mithel-kapoor-logo.png" width="44" /><span className="text-[1rem] font-semibold uppercase text-ovia-plum">Mithel Kapoor</span></Link>
           <nav aria-label="Primary" className="flex items-center gap-7 xl:gap-9">
             <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#featured">Featured</a>
-            <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#necklaces">Necklaces</a>
-            <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#earrings">Earrings</a>
-            <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#bracelets">Bracelets</a>
+            <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#shirts">Shirts</a>
+            <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#suits-blazers">Tailoring</a>
+            <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#ethnic-wear">Ethnic Wear</a>
             <Link
-              aria-label="Explore the Jewellgalleria Business Preview"
-              className="group inline-flex min-h-11 items-center gap-2 rounded-control border border-ovia-plum bg-ovia-plum px-4 text-white shadow-[0_6px_16px_rgb(71_34_44/0.14)] transition-colors hover:bg-ovia-primary"
+              aria-label="Explore the Mithel Kapoor Business Preview"
+              className="group inline-flex min-h-11 items-center gap-2 rounded-control border border-ovia-plum bg-ovia-plum px-4 text-white shadow-[0_6px_16px_rgb(16_17_15/0.14)] transition-colors hover:bg-ovia-primary"
               data-testid="desktop-business-preview"
               to="/business"
             >
@@ -116,7 +117,7 @@ export function CustomerLayout() {
             </Link>
           </nav>
           <div className="flex items-center gap-1">
-            <button aria-label="Search Jewellgalleria products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/50" onClick={() => setIsSearchOpen(true)} type="button"><Search aria-hidden="true" size={18} /></button>
+            <button aria-label="Search Mithel Kapoor products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/50" onClick={() => setIsSearchOpen(true)} type="button"><Search aria-hidden="true" size={18} /></button>
             <BagButton cartCount={cartCount} dataTestId="desktop-header-bag-button" onOpen={() => setIsCartOpen(true)} reducedMotion={prefersReducedMotion} />
           </div>
         </Container>
