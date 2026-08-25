@@ -9,15 +9,14 @@ export function SiteFooter() {
       <Container className="grid gap-10 py-12 sm:grid-cols-[1.4fr_1fr_1fr] sm:py-16 lg:py-20">
         <div className="max-w-sm">
           <img
-            alt="Niikurr"
-            className="size-14 rounded-full bg-ovia-ivory p-1.5 object-contain"
-            height="56"
-            src="/brand/niikurr-logo.png"
-            width="56"
+            alt="Nikur"
+            className="h-20 w-32 object-contain brightness-0 invert"
+            height="80"
+            src="/brand/nikur-logo.png"
+            width="128"
           />
-          <p className="mt-5 text-xl font-semibold uppercase">Niikurr</p>
-          <p className="mt-3 text-sm leading-6 text-white/70">
-            An image-led Indian occasion-wear storefront shaped around the supplied Niikurr references.
+          <p className="mt-5 text-sm leading-6 text-white/70">
+            An image-led Indian occasion-wear storefront shaped around the supplied Nikur references.
           </p>
         </div>
         <div>
@@ -58,7 +57,7 @@ export function SiteFooter() {
       </Container>
       <div className="border-t border-white/10">
         <Container className="flex flex-wrap items-center justify-between gap-2 py-5 text-xs text-white/50">
-          <span>Private concept for Niikurr</span>
+          <span>Private concept for Nikur</span>
           <span>Product information is limited to the supplied reference material.</span>
         </Container>
       </div>

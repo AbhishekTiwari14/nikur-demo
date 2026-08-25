@@ -57,16 +57,16 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
       {
         productId: 'jg-real-010',
         eyebrow: 'Product interest',
-        title: 'Ivory Shawl-Collar Evening Blazer is receiving the highest demo product views.',
+        title: 'Purple Multicolour-Bodice Chaniya Choli is receiving the highest demo product views.',
         description:
           'This illustrative signal uses fabricated browsing activity for the selected period.',
       },
       {
         productId: 'jg-real-008',
         eyebrow: 'Stock watch',
-        title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
+        title: 'Vintage-Panel Black Chaniya Choli is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Niikurr alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Nikur alert.',
       },
       {
         productId: 'jg-real-009',
@@ -100,16 +100,16 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
       {
         productId: 'jg-real-009',
         eyebrow: 'Style momentum',
-        title: 'Midnight Embroidered Long Jacket is receiving the highest demo product views.',
+        title: 'Fuchsia Multicolour Chaniya Choli is receiving the highest demo product views.',
         description:
           'This illustrative signal uses fabricated browsing activity for the selected period.',
       },
       {
         productId: 'jg-real-008',
         eyebrow: 'Stock watch',
-        title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
+        title: 'Vintage-Panel Black Chaniya Choli is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Niikurr alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Nikur alert.',
       },
       {
         productId: 'jg-real-001',
@@ -140,16 +140,16 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
       {
         productId: 'jg-real-010',
         eyebrow: 'Category interest',
-        title: 'Ivory Shawl-Collar Evening Blazer is receiving the highest demo product views.',
+        title: 'Purple Multicolour-Bodice Chaniya Choli is receiving the highest demo product views.',
         description:
           'This illustrative signal uses fabricated browsing activity for the selected period.',
       },
       {
         productId: 'jg-real-008',
         eyebrow: 'Stock watch',
-        title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
+        title: 'Vintage-Panel Black Chaniya Choli is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Niikurr alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Nikur alert.',
       },
       {
         productId: 'jg-real-013',

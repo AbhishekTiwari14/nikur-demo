@@ -46,16 +46,16 @@ export function BusinessLayout() {
         <Container className="flex min-h-18 items-center justify-between gap-3 py-3">
           <div className="flex min-w-0 items-center gap-3">
             <img
-              alt="Niikurr"
-              className="size-10 shrink-0 object-contain mix-blend-multiply sm:size-11"
-              height="44"
-              src="/brand/niikurr-logo.png"
-              width="44"
+              alt="Nikur"
+              className="h-12 w-20 shrink-0 object-contain sm:h-14 sm:w-24"
+              height="56"
+              src="/brand/nikur-logo.png"
+              width="96"
             />
             <div className="min-w-0">
               <p className="truncate font-display text-lg text-ovia-plum">
                 <span className="sm:hidden">Business</span>
-                <span className="hidden sm:inline">Niikurr Business</span>
+                <span className="hidden sm:inline">Business Preview</span>
               </p>
               <p className="hidden text-xs text-ovia-muted sm:block">
                 Private operations preview

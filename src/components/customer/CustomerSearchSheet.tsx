@@ -56,7 +56,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Search Niikurr products">
+        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Search Nikur products">
           <motion.button
             animate={{ opacity: 1 }}
             aria-label="Close search"
@@ -77,7 +77,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <p className="type-eyebrow">Explore the collection</p>
-                  <h2 className="mt-1.5 font-display text-3xl">Search Niikurr</h2>
+                  <h2 className="mt-1.5 font-display text-3xl">Search Nikur</h2>
                 </div>
                 <button aria-label="Close search" className="flex size-12 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/55" onClick={onClose} type="button">
                   <X aria-hidden="true" size={21} />

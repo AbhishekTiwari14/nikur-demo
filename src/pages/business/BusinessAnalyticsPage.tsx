@@ -247,7 +247,7 @@ export function BusinessAnalyticsPage() {
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-ovia-primary/20 bg-ovia-blush/30 px-4 py-3 text-xs text-ovia-plum">
         <span className="font-bold tracking-[0.08em] uppercase">Demo analytics only</span>
-        <span>All events, metrics, trends, and insights below are simulated, not Niikurr customer data.</span>
+        <span>All events, metrics, trends, and insights below are simulated, not Nikur customer data.</span>
       </div>
 
       <AnimatePresence mode="wait">
@@ -397,7 +397,7 @@ export function BusinessAnalyticsPage() {
                 <Sparkles aria-hidden="true" className="text-ovia-primary" size={18} />
                 <h2 className="font-display text-2xl text-ovia-ink">Demo insights</h2>
               </div>
-              <p className="mt-1 text-xs text-ovia-muted">Illustrative prompts only, not analysis of Niikurr's real customers.</p>
+              <p className="mt-1 text-xs text-ovia-muted">Illustrative prompts only, not analysis of Nikur's real customers.</p>
               <div className="mt-4 grid gap-3 lg:grid-cols-3">
                 {snapshot.insights.map((insight, index) => {
                   const product = sellableProducts.find((candidate) => candidate.id === insight.productId)

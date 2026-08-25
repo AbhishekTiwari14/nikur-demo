@@ -22,7 +22,7 @@ const bySlug = Object.fromEntries(
 function requiredProduct(slug: string) {
   const product = bySlug[slug]
   if (!product) {
-    throw new Error(`Required Niikurr product is missing: ${slug}`)
+    throw new Error(`Required Nikur product is missing: ${slug}`)
   }
   return product
 }
@@ -132,7 +132,7 @@ export function HomePage() {
           id="featured"
           onOpenCart={openCart}
           products={featuredProducts}
-          title="The Niikurr edit"
+          title="The Nikur edit"
         />
       </Container>
 
@@ -178,7 +178,7 @@ export function HomePage() {
               <Camera aria-hidden="true" className="text-ovia-logo" size={24} strokeWidth={1.6} />
               <p className="type-eyebrow mt-5">Follow the collection</p>
               <h2 className="mt-3 font-display text-[2.65rem] leading-[0.94] font-medium text-ovia-ink sm:text-5xl">
-                See more from Niikurr
+                See more from Nikur
               </h2>
               <p className="mt-4 max-w-lg text-sm leading-7 text-ovia-muted sm:text-base">
                 Discover current styling and collection updates on the official Instagram profile.

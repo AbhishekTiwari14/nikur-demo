@@ -86,12 +86,11 @@ export function CustomerLayout() {
           <button aria-label="Open navigation" className="flex size-11 items-center justify-center rounded-full text-ovia-plum transition-colors hover:bg-ovia-blush/50" data-testid="mobile-menu-trigger" onClick={() => setIsMenuOpen(true)} type="button">
             <Menu aria-hidden="true" size={22} />
           </button>
-          <Link aria-label="Niikurr home" className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap" to="/">
-            <img alt="" className="size-8 object-contain mix-blend-multiply" height="32" src="/brand/niikurr-logo.png" width="32" />
-            <span className="text-[0.7rem] font-semibold uppercase">Niikurr</span>
+          <Link aria-label="Nikur home" className="absolute left-1/2 flex -translate-x-1/2 items-center whitespace-nowrap" to="/">
+            <img alt="Nikur" className="h-11 w-[4.5rem] object-contain" height="44" src="/brand/nikur-logo.png" width="72" />
           </Link>
           <div className="flex items-center">
-            <button aria-label="Search Niikurr products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum transition-colors hover:bg-ovia-blush/50" data-testid="mobile-search-trigger" onClick={() => setIsSearchOpen(true)} type="button">
+            <button aria-label="Search Nikur products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum transition-colors hover:bg-ovia-blush/50" data-testid="mobile-search-trigger" onClick={() => setIsSearchOpen(true)} type="button">
               <Search aria-hidden="true" size={20} />
             </button>
             <BagButton cartCount={cartCount} dataTestId="header-bag-button" onOpen={() => setIsCartOpen(true)} reducedMotion={prefersReducedMotion} />
@@ -99,14 +98,14 @@ export function CustomerLayout() {
         </Container>
 
         <Container className="hidden min-h-20 items-center justify-between gap-5 lg:flex">
-          <Link aria-label="Niikurr home" className="flex items-center gap-2.5" to="/"><img alt="" className="size-11 object-contain mix-blend-multiply" height="44" src="/brand/niikurr-logo.png" width="44" /><span className="text-[1rem] font-semibold uppercase text-ovia-plum">Niikurr</span></Link>
+          <Link aria-label="Nikur home" className="flex items-center" to="/"><img alt="Nikur" className="h-14 w-24 object-contain" height="56" src="/brand/nikur-logo.png" width="96" /></Link>
           <nav aria-label="Primary" className="flex items-center gap-7 xl:gap-9">
             <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#featured">Featured</a>
             <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#chaniya-choli">Chaniya Choli</a>
             <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#lehenga-sets">Lehenga Sets</a>
             <a className="text-[0.72rem] font-semibold tracking-[0.09em] text-ovia-muted uppercase transition-colors hover:text-ovia-primary" href="/#festive-dresses">Festive Dresses</a>
             <Link
-              aria-label="Explore the Niikurr Business Preview"
+              aria-label="Explore the Nikur Business Preview"
               className="group inline-flex min-h-11 items-center gap-2 rounded-control border border-ovia-plum bg-ovia-plum px-4 text-white shadow-[0_6px_16px_rgb(16_17_15/0.14)] transition-colors hover:bg-ovia-primary"
               data-testid="desktop-business-preview"
               to="/business"
@@ -117,7 +116,7 @@ export function CustomerLayout() {
             </Link>
           </nav>
           <div className="flex items-center gap-1">
-            <button aria-label="Search Niikurr products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/50" onClick={() => setIsSearchOpen(true)} type="button"><Search aria-hidden="true" size={18} /></button>
+            <button aria-label="Search Nikur products" className="flex size-11 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/50" onClick={() => setIsSearchOpen(true)} type="button"><Search aria-hidden="true" size={18} /></button>
             <BagButton cartCount={cartCount} dataTestId="desktop-header-bag-button" onOpen={() => setIsCartOpen(true)} reducedMotion={prefersReducedMotion} />
           </div>
         </Container>

@@ -139,7 +139,7 @@ export function BusinessProductsPage() {
             <Plus aria-hidden="true" size={18} /> Add Product
           </Link>
         )}
-        description="Manage Niikurr's source-backed demo catalogue with structured size-level stock."
+        description="Manage Nikur's source-backed demo catalogue with structured size-level stock."
         eyebrow="Products"
         title="Catalogue overview"
       />

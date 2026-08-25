@@ -111,7 +111,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 </span>
                 <h3 className="mt-5 font-display text-2xl">Your bag is waiting</h3>
                 <p className="mt-2 max-w-xs text-sm leading-6 text-ovia-muted">
-                  Browse the Niikurr collection and add a garment when you are ready.
+                  Browse the Nikur collection and add a garment when you are ready.
                 </p>
                 <Link
                   className="mt-6 inline-flex min-h-11 items-center rounded-control bg-ovia-primary px-5 text-sm font-semibold text-white hover:bg-ovia-plum"
