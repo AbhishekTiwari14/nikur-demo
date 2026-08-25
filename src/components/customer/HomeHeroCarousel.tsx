@@ -109,7 +109,7 @@ export function HomeHeroCarousel({ slides }: HomeHeroCarouselProps) {
 
   return (
     <section
-      aria-label="Mithel Kapoor featured menswear"
+      aria-label="Niikurr featured collection"
       aria-roledescription="carousel"
       className="relative h-[min(72svh,38rem)] min-h-[32rem] overflow-hidden bg-ovia-plum focus-visible:outline focus-visible:outline-3 focus-visible:-outline-offset-3 lg:h-[min(78svh,48rem)] lg:min-h-[38rem]"
       data-testid="home-hero-carousel"

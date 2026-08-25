@@ -1,33 +1,46 @@
-# AGENTS.md — Mithel Kapoor Demo
+# AGENTS.md — Niikurr Demo
 
 ## Mission
 
-This repository is an independent sales-demo ecommerce website for:
+This repository is an independent sales-demo ecommerce storefront for:
 
-Brand: Mithel Kapoor
-Instagram: @mithelkapoorofficial
+Brand: Niikurr
+Instagram: @niikurr
 
-It was cloned from the reusable Jewell Galleria ecommerce demo.
+It was cloned from the completed Mithel Kapoor fashion demo.
 
-The goal is to convert the existing customer storefront into a polished, premium men's-fashion demo quickly.
+The Mithel Kapoor demo is being used because it currently contains the strongest and most furnished storefront structure/UX among the available templates.
+
+The goal is to transform that experience into a polished, mobile-first women's Indian/traditional-wear storefront for Niikurr.
 
 This is a SALES DEMO, not a production ecommerce build.
 
 ---
 
-## Golden Rule
+## Primary Principle
+
+Preserve the quality and richness of the existing Mithel Kapoor storefront.
+
+Do NOT simplify the homepage, PDP or shopping experience merely because the brand is changing.
 
 Reuse before rewriting.
 
 Prefer:
 
-1. existing architecture/components
-2. configuration/data changes
-3. asset replacement
-4. content/theme changes
-5. small targeted component changes
+1. existing components
+2. existing architecture
+3. configuration/data changes
+4. asset replacement
+5. merchandising/content changes
+6. small targeted styling/component edits
 
-Do not migrate framework, router, state management, styling system or build tooling.
+Do not migrate:
+
+- framework
+- router
+- state management
+- styling system
+- build tooling
 
 Do not perform unrelated refactors.
 
@@ -35,319 +48,389 @@ Do not perform unrelated refactors.
 
 ## Task Discipline
 
-Only perform the currently requested Codex task.
+Only perform the current requested task.
+
+Do not continue automatically into later tasks.
 
 Before editing:
+
 - inspect only relevant files;
 - make a short plan.
 
 After editing:
+
 - validate;
 - summarize;
-- list changed files;
-- report unresolved issues;
+- list modified files;
+- mention unresolved issues;
 - stop.
 
-Do not continue into later tasks automatically.
+Do not repeatedly re-audit work already understood in previous tasks.
 
 ---
 
-## Source Material
+# Source Material
 
-Reference assets are under:
+Niikurr source material is under:
 
 /reference/brand
 /reference/products
 
-The supplied logo and screenshots are the visual source material.
+The logo is the visual brand reference.
 
-Raw Instagram screenshots should not be directly used where a better website-ready asset can reasonably be produced.
+Product screenshots from Instagram/Reels are visual product references.
+
+Raw screenshots may contain:
+
+- Instagram UI
+- Reel overlays
+- text
+- inconsistent backgrounds
+- poor framing
+- compression
+- blur
+- low source resolution
+
+Do not assume they are suitable as final storefront assets.
 
 ---
 
-## Brand Direction
+# Brand Direction
 
-Mithel Kapoor is a men's fashion brand.
+Niikurr is a women's Indian/traditional-wear fashion brand.
 
-Use the supplied screenshots to determine the actual mix, which may include:
+Determine actual product direction from the supplied references.
 
-- shirts
-- suits/blazers
-- ethnic wear
-- occasion wear
-- other menswear visible in the supplied material
+Possible categories may include:
 
-Do not introduce categories unsupported by the supplied screenshots simply for variety.
+- Kurta Sets
+- Suit Sets
+- Anarkali Sets
+- Co-ord Sets
+- Festive Wear
+- Dresses
+- Sarees
+- Ethnic/Fusion Wear
+
+Do NOT use a category unless the supplied references support it.
 
 The storefront should feel:
 
-- masculine
-- refined
-- premium
+- feminine
+- elegant
 - contemporary
-- fashion-led
+- Indian
+- premium
+- warm
 - editorial
-- clean
+- image-led
 
-Avoid jewellery-style visual language inherited from Jewell Galleria.
+Remove Mithel Kapoor's masculine fashion direction from customer-facing UI.
 
 ---
 
-## Product Catalogue
+# Catalogue Size
 
 Aim for approximately 10–12 strong products.
 
-Use real/source-backed product concepts from the supplied screenshots.
+Quality matters more than catalogue size.
 
-Exact product copies are not necessary for this sales demo, but generated/edited products should remain close to the observed:
+Choose products based on:
 
-- garment type
-- silhouette
-- colour
-- print
-- embroidery/detailing
-- overall styling
-
-Generated/demo products should be internally marked where practical:
-
-isDemoProduct: true
+1. visual strength
+2. category/style variety
+3. homepage usefulness
+4. source detail
+5. ability to create faithful premium imagery
 
 ---
 
-## Product Naming
+# Product Naming
 
-Use exact names if confidently visible.
+Use exact names where confidently readable.
 
-Otherwise create concise merchandising names based on appearance, such as:
+Otherwise create concise descriptive merchandising names.
 
-- Textured Evening Shirt
-- Classic Black Bandhgala
-- Embroidered Festive Kurta Set
-- Tailored Double-Breasted Suit
+Examples only:
 
-Do not invent material composition unless supported.
+- Floral Anarkali Set
+- Embroidered Straight Kurta Set
+- Printed Festive Suit Set
+- Flared Occasion Kurta Set
+
+Do not use these unless they visually match the product.
 
 ---
 
-## Demo Pricing
+# Pricing
 
-Use visible source pricing when confidently readable.
+Use real visible pricing when confidently readable.
 
-Otherwise create plausible demo prices consistent with the visible category.
+Otherwise assign plausible DEMO prices.
 
-Suggested ranges:
+Prefer natural values such as:
 
-Shirts:
-₹1,199–₹2,999
-
-Ethnic wear:
-₹1,999–₹5,999
-
-Blazers / suits:
-₹3,999–₹9,999
-
-Use natural ecommerce values such as:
-
-1299
+999
+1199
 1499
 1799
 1999
+2299
 2499
+2799
 2999
 3499
 3999
 4499
 4999
+5499
 5999
-6999
-7999
-8999
-9999
 
-Avoid awkward random numbers.
+Do not use awkward random prices.
 
-Internally mark generated pricing where practical.
+Do not make all products similarly priced.
+
+Keep demo-generated prices easy to replace later.
 
 ---
 
-## Product Images — Strict Quality Standard
+# Product Facts
 
-Blurry, pixelated or visibly enlarged Instagram screenshots are NOT acceptable as final primary product imagery.
+Do not invent unsupported:
+
+- fabric composition
+- cotton/silk claims
+- embroidery technique
+- handcrafted claims
+- free shipping
+- COD
+- return periods
+- reviews
+- customer counts
+- warranties
+
+Only use facts supported by source material.
+
+---
+
+# Sizes
+
+Use real sizes where visible.
+
+Otherwise simple DEMO sizing may use:
+
+S / M / L / XL
+
+where appropriate.
+
+Do not build complex tailoring measurements.
+
+---
+
+# Product Image Quality — Critical
+
+Blurry, pixelated or obviously enlarged Instagram screenshots are NOT acceptable as primary storefront images.
 
 Do not:
 
-- crop a 300px screenshot;
-- enlarge it to 1200px;
-- export it;
-- call it finished.
+300px screenshot
+→ upscale to 1200px
+→ treat as high quality.
 
 First determine whether blur comes from:
 
-- source resolution
+- low source resolution
+- screenshot compression
+- thumbnail being used as full image
 - CSS stretching
-- thumbnail/full-image confusion
-- compression
 - object-fit
-- responsive rendering
+- transforms
+- excessive compression
 
-Fix rendering bugs where applicable.
+Fix frontend rendering issues where applicable.
 
-For poor source assets, use available image editing/generation capabilities to create a higher-quality ecommerce presentation using the screenshot as visual reference.
+When the source itself is poor, use available image-generation/editing capabilities to create a premium ecommerce interpretation based on the garment.
 
 ---
 
-## Required Product Gallery
+# Three-Image Requirement
 
-Important products should have exactly 3 useful images:
+Every important product should have exactly 3 useful images:
 
-1. hero
-   - clean premium product image
+1. Hero
+   - complete premium ecommerce presentation
 
-2. detail
-   - closer view of visible garment detailing
+2. Detail
+   - closer useful garment detail
 
-3. editorial
+3. Editorial
    - polished lifestyle/model presentation
 
-The SAME garment must remain recognisable across all 3 images.
+Do not create three nearly identical images.
 
-Do not change:
+---
 
-- colour
-- embroidery
+# Garment Fidelity
+
+The SAME garment must remain recognisable across all three images.
+
+Preserve:
+
+- primary colour
+- secondary colours
 - print
-- buttons
-- neckline/collar
-- sleeve design
+- embroidery
+- neckline
+- sleeves
 - silhouette
-- garment construction
+- borders
+- dupatta
+- matching bottom
+- garment combination
 
-between gallery images.
+AI drift is unacceptable.
 
-Prefer approximately 1200px+ images where appropriate.
+Do not create three related but different outfits.
 
-Optimize for web.
+The garment is the source of truth, not the identity of the Instagram model.
 
----
-
-## Model/Image Generation
-
-When source screenshots feature models, the goal is to preserve the GARMENT, not the identity of the original model.
-
-It is acceptable to use a different generic model/presentation for generated ecommerce imagery.
-
-Keep model styling consistent with the garment and brand.
-
-Do not make the generated person the focus over the product.
+A different generic model is acceptable.
 
 ---
 
-## UI Palette
+# Image Standard
 
-Derive the storefront colour palette from the supplied logo.
+Prefer approximately 1200px+ output where useful.
 
-Inspect:
+Use efficient web formats such as WebP where compatible.
 
-- dominant logo colour
-- secondary colour
+Do not create unnecessarily huge files.
+
+Keep the catalogue visually coherent through reasonably consistent:
+
+- crop
+- lighting
+- background family
+- colour grading
+- model styling
+
+The store should feel like one brand shoot.
+
+---
+
+# Theme / UI Palette
+
+Derive the Niikurr storefront palette from the supplied logo.
+
+Determine:
+
+- primary
+- secondary
 - accent
-- background tone
-- typography character
+- page background
+- surface tone
+- main text
 
-Adapt the EXISTING Jewell Galleria theme tokens.
+Reuse the existing theme-token architecture.
 
 Do not build a new design system.
 
-Use only a small coherent palette.
+Do not mechanically use every logo colour.
 
 ---
 
-## Homepage
+# Homepage
 
-Reuse the existing homepage architecture.
+PRESERVE the existing richness and good UX of the Mithel Kapoor homepage.
 
-Prioritize:
+Do not simplify it.
 
-1. header/logo
-2. strong menswear hero
+Re-merchandise existing sections for Niikurr.
+
+Preferred hierarchy:
+
+1. Header/logo
+2. Strong Niikurr editorial hero
 3. Shop by Category
 4. New / Featured Collection
-5. editorial collection section
-6. selected product row
-7. occasion/ethnic section where supported
+5. Strong editorial collection feature
+6. Selected product row
+7. Festive / Occasion section where supported
 8. Instagram CTA
 9. subtle Business Preview
-10. footer
+10. Footer
 
-Use real/reference-backed styles prominently.
+Use the strongest Niikurr products above the fold.
 
 ---
 
-## Product Detail Page
+# Product Detail Page
 
-Reuse the existing PDP.
+Reuse the existing Mithel Kapoor PDP architecture.
+
+Adapt it for women's traditional wear.
 
 Ensure:
 
 - 3-image gallery
-- product name
+- product title
 - price
 - size selector
 - quantity
 - Add to Bag
-- concise product description
+- concise description
 - related products
 
-Remove jewellery-specific:
+Remove Mithel/menswear-specific content.
 
-- plating
-- stone details
-- jewellery care
-- ring sizing
-- irrelevant claims
+Do not introduce unsupported claims.
 
 ---
 
-## Sizes
+# Storefront Integration
 
-Use supplied sizes where visible.
+All Niikurr products must work correctly in:
 
-Otherwise use simple demo sizing appropriate to the existing architecture, usually:
+- homepage
+- categories
+- search
+- PDP
+- related products
+- cart
 
-S / M / L / XL
-
-Do not overengineer tailoring measurements for the sales demo.
-
----
-
-## Business Preview
-
-Preserve the existing Jewell Galleria business/dashboard functionality where possible.
-
-Do not spend major time rebuilding it unless explicitly requested later.
-
-Any metrics remain clearly SAMPLE / SIMULATED.
-
-Storefront quality is the priority.
+No Mithel Kapoor product should unexpectedly appear in customer-facing flows.
 
 ---
 
-## Mobile First
+# Business Preview
+
+Preserve the existing Business Preview/dashboard functionality.
+
+Do NOT spend significant implementation time customizing it in the first Niikurr demo.
+
+Keep it secondary to the storefront.
+
+Metrics must remain SAMPLE / SIMULATED.
+
+---
+
+# Mobile First
 
 Primary target:
 
 360–430px
 
-Check:
+Carefully check:
 
-- header/logo
+- logo
+- navbar
 - hero
 - category cards
+- product rows
 - product cards
 - image crops
-- product grid
 - PDP gallery
-- size selector
+- sizes
 - sticky CTA
 - cart
 - footer
@@ -356,66 +439,46 @@ Desktop must remain polished.
 
 ---
 
-## Content Safety
+# Technical Rules
 
-Do not invent:
+Follow existing repository patterns.
 
-- customer counts
-- fake reviews
-- awards
-- certifications
-- exact fabric composition
-- free shipping
-- COD
-- return windows
-- handmade claims
-- years in business
+Do not:
 
-unless clearly supported.
+- add unnecessary dependencies
+- introduce `any` merely to silence TypeScript
+- build a backend
+- add live payments
+- add production authentication
+- perform unrelated refactors
 
 ---
 
-## Technical Rules
-
-Follow existing repository conventions.
-
-Do not add dependencies unless genuinely required.
-
-Do not use `any` simply to bypass TypeScript errors.
-
-Do not build:
-
-- backend
-- payment gateway
-- production authentication
-- unnecessary infrastructure
-
----
-
-## Validation
+# Validation
 
 Use actual scripts from package.json.
 
-Before completing relevant application changes:
+Where relevant:
 
-- run lint/typecheck where available
+- run lint
+- run typecheck if available
 - run production build
-- verify mobile layout
-- verify product routes
 - verify image paths
+- verify product routes
+- verify responsive layout
 
 ---
 
-## Speed Principle
+# Speed Principle
 
 This is a prospect-conversion demo.
 
-Prioritize:
+Spend effort where the prospect will notice it:
 
 1. brand resemblance
-2. strong homepage
+2. homepage richness
 3. sharp product imagery
 4. polished PDP
-5. mobile presentation
+5. mobile experience
 
-Do not spend time perfecting hidden technical architecture that the prospect will not see.
+Do not spend time perfecting hidden architecture.

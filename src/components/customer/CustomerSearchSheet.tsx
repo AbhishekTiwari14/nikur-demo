@@ -56,7 +56,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Search Mithel Kapoor products">
+        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Search Niikurr products">
           <motion.button
             animate={{ opacity: 1 }}
             aria-label="Close search"
@@ -77,7 +77,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <p className="type-eyebrow">Explore the collection</p>
-                  <h2 className="mt-1.5 font-display text-3xl">Search Mithel Kapoor</h2>
+                  <h2 className="mt-1.5 font-display text-3xl">Search Niikurr</h2>
                 </div>
                 <button aria-label="Close search" className="flex size-12 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/55" onClick={onClose} type="button">
                   <X aria-hidden="true" size={21} />
@@ -91,7 +91,7 @@ export function CustomerSearchSheet({ isOpen, onClose }: CustomerSearchSheetProp
                   className="customer-search-input min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-ovia-muted/65"
                   data-testid="customer-search-input"
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Search shirts, tailoring, ethnic wear..."
+                  placeholder="Search chaniya choli, lehenga sets, festive dresses..."
                   type="search"
                   value={query}
                 />

@@ -19,9 +19,9 @@ import { formatInr } from '../../lib/currency'
 import { useDemoStore } from '../../store/demoStore'
 
 const categoryLabels = {
-  shirts: 'Shirts',
-  'suits-blazers': 'Suits & Blazers',
-  'ethnic-wear': 'Ethnic Wear',
+  'chaniya-choli': 'Chaniya Choli',
+  'lehenga-sets': 'Lehenga Sets',
+  'festive-dresses': 'Festive Dresses',
 } as const
 
 function ProductRow({
@@ -139,7 +139,7 @@ export function BusinessProductsPage() {
             <Plus aria-hidden="true" size={18} /> Add Product
           </Link>
         )}
-        description="Manage Mithel Kapoor's source-backed demo catalogue with structured size-level stock."
+        description="Manage Niikurr's source-backed demo catalogue with structured size-level stock."
         eyebrow="Products"
         title="Catalogue overview"
       />

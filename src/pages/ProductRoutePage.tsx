@@ -107,7 +107,7 @@ export function ProductRoutePage() {
   useEffect(() => {
     if (!product) return
     const previousTitle = document.title
-    document.title = `${product.catalogueName} | Mithel Kapoor`
+    document.title = `${product.catalogueName} | Niikurr`
     return () => {
       document.title = previousTitle
     }
@@ -210,7 +210,7 @@ export function ProductRoutePage() {
             <ProductGallery images={product.images} isWishlisted={isWishlisted} key={product.id} onToggleWishlist={() => toggleWishlist(product.id)} productName={product.catalogueName} />
 
             <motion.div animate={{ opacity: 1, y: 0 }} className="px-4 pt-5 pb-9 sm:px-0 sm:pt-8 lg:sticky lg:top-24 lg:self-start lg:py-3" initial={{ opacity: 0, y: 14 }} transition={{ duration: 0.45, delay: 0.06 }}>
-              <p className="text-[0.66rem] font-bold text-ovia-primary uppercase">Mithel Kapoor catalogue</p>
+              <p className="text-[0.66rem] font-bold text-ovia-primary uppercase">Niikurr catalogue</p>
               <h1 className="mt-2.5 max-w-xl font-display text-[2.25rem] leading-[0.96] tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]">{product.catalogueName}</h1>
 
               {hasKnownPrice ? (
@@ -269,7 +269,7 @@ export function ProductRoutePage() {
                   <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold [&::-webkit-details-marker]:hidden">Product details<ChevronDown aria-hidden="true" className="transition-transform group-open:rotate-180" size={18} /></summary>
                   <div className="pb-5 text-sm leading-7 text-ovia-muted">
                     <p>{product.description}</p>
-                    <p className="mt-3 text-xs leading-5">Details are limited to the supplied Mithel Kapoor references.</p>
+                    <p className="mt-3 text-xs leading-5">Details are limited to the supplied Niikurr references.</p>
                   </div>
                 </details>
               </div>

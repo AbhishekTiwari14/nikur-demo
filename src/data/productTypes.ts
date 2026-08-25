@@ -1,12 +1,12 @@
 export type ProductCategory =
-  | 'shirts'
-  | 'suits-blazers'
-  | 'ethnic-wear'
+  | 'chaniya-choli'
+  | 'lehenga-sets'
+  | 'festive-dresses'
 
 export const productCategoryLabels: Record<ProductCategory, string> = {
-  shirts: 'Shirts',
-  'suits-blazers': 'Suits & Blazers',
-  'ethnic-wear': 'Ethnic Wear',
+  'chaniya-choli': 'Chaniya Choli',
+  'lehenga-sets': 'Lehenga Sets',
+  'festive-dresses': 'Festive Dresses',
 }
 
 export type ProductImageGallery = readonly [string, ...string[]]

@@ -9,15 +9,15 @@ export function SiteFooter() {
       <Container className="grid gap-10 py-12 sm:grid-cols-[1.4fr_1fr_1fr] sm:py-16 lg:py-20">
         <div className="max-w-sm">
           <img
-            alt="Mithel Kapoor"
-            className="size-14 object-contain invert"
+            alt="Niikurr"
+            className="size-14 rounded-full bg-ovia-ivory p-1.5 object-contain"
             height="56"
-            src="/brand/mithel-kapoor-logo.png"
+            src="/brand/niikurr-logo.png"
             width="56"
           />
-          <p className="mt-5 text-xl font-semibold uppercase">Mithel Kapoor</p>
+          <p className="mt-5 text-xl font-semibold uppercase">Niikurr</p>
           <p className="mt-3 text-sm leading-6 text-white/70">
-            A private menswear storefront concept shaped around the supplied Mithel Kapoor references.
+            An image-led Indian occasion-wear storefront shaped around the supplied Niikurr references.
           </p>
         </div>
         <div>
@@ -25,9 +25,9 @@ export function SiteFooter() {
             Catalogue
           </p>
           <div className="mt-4 flex flex-col items-start gap-3 text-sm text-white/80">
-            <a className="hover:text-white" href="/#shirts">Shirts</a>
-            <a className="hover:text-white" href="/#suits-blazers">Suits &amp; Blazers</a>
-            <a className="hover:text-white" href="/#ethnic-wear">Ethnic Wear</a>
+            <a className="hover:text-white" href="/#chaniya-choli">Chaniya Choli</a>
+            <a className="hover:text-white" href="/#lehenga-sets">Lehenga Sets</a>
+            <a className="hover:text-white" href="/#festive-dresses">Festive Dresses</a>
             <a className="hover:text-white" href="/#featured">Featured</a>
           </div>
         </div>
@@ -44,11 +44,11 @@ export function SiteFooter() {
           </Link>
           <a
             className="mt-4 flex w-fit items-center gap-2 text-sm text-white/80 hover:text-white"
-            href="https://www.instagram.com/mithelkapoorofficial/"
+            href="https://www.instagram.com/niikurr/"
             rel="noreferrer"
             target="_blank"
           >
-            @mithelkapoorofficial
+            @niikurr
             <ArrowUpRight aria-hidden="true" size={15} />
           </a>
           <p className="mt-6 text-xs leading-5 text-white/50">
@@ -58,7 +58,7 @@ export function SiteFooter() {
       </Container>
       <div className="border-t border-white/10">
         <Container className="flex flex-wrap items-center justify-between gap-2 py-5 text-xs text-white/50">
-          <span>Private concept for Mithel Kapoor</span>
+          <span>Private concept for Niikurr</span>
           <span>Product information is limited to the supplied reference material.</span>
         </Container>
       </div>

@@ -22,65 +22,64 @@ const bySlug = Object.fromEntries(
 function requiredProduct(slug: string) {
   const product = bySlug[slug]
   if (!product) {
-    throw new Error(`Required Mithel Kapoor product is missing: ${slug}`)
+    throw new Error(`Required Niikurr product is missing: ${slug}`)
   }
   return product
 }
 
-const silverSherwani = requiredProduct('silver-botanical-sherwani-set')
-const midnightJacket = requiredProduct('midnight-embroidered-long-jacket')
-const ivoryBlazer = requiredProduct('ivory-shawl-collar-evening-blazer')
-const blackEveningSuit = requiredProduct('black-embroidered-evening-suit')
-const navyPaisleyShirt = requiredProduct('navy-paisley-statement-shirt')
-const multicolourKurta = requiredProduct('ivory-multicolour-festive-kurta-set')
-const blackTuxedo = requiredProduct('black-sequinned-tuxedo')
-const sageBandhgala = requiredProduct('sage-embroidered-bandhgala')
-const plumFestiveSet = requiredProduct('deep-plum-embroidered-festive-set')
+const chocolateLehenga = requiredProduct('chocolate-wine-embellished-lehenga-set')
+const fuchsiaChaniya = requiredProduct('fuchsia-multicolour-chaniya-choli')
+const purpleChaniya = requiredProduct('purple-multicolour-bodice-chaniya-choli')
+const rubyChaniya = requiredProduct('ruby-ivory-chaniya-choli')
+const ivoryDress = requiredProduct('ivory-gold-trim-festive-dress')
+const scarletChaniya = requiredProduct('scarlet-multicolour-detail-chaniya-choli')
+const emeraldChaniya = requiredProduct('emerald-geometric-panel-chaniya-choli')
+const vintageBlackChaniya = requiredProduct('vintage-panel-black-chaniya-choli')
+const blackGoldLehenga = requiredProduct('black-antique-gold-printed-lehenga-set')
+const mustardChaniya = requiredProduct('mustard-geometric-detail-chaniya-choli')
 
 const featuredProducts = [
-  blackTuxedo,
-  silverSherwani,
-  navyPaisleyShirt,
-  multicolourKurta,
+  blackGoldLehenga,
+  fuchsiaChaniya,
+  chocolateLehenga,
+  mustardChaniya,
 ]
 
-const shirts = sellableProducts.filter(
-  (product) => product.category === 'shirts',
-)
+const chaniyaHighlights = [rubyChaniya, emeraldChaniya, purpleChaniya, scarletChaniya]
 
 const categoryCards = [
-  { label: 'Shirts', href: '#shirts', product: navyPaisleyShirt },
-  { label: 'Suits & Blazers', href: '#suits-blazers', product: blackTuxedo },
-  { label: 'Ethnic Wear', href: '#ethnic-wear', product: silverSherwani },
+  { label: 'Chaniya Choli', href: '#chaniya-choli', product: fuchsiaChaniya },
+  { label: 'Lehenga Sets', href: '#lehenga-sets', product: blackGoldLehenga },
+  { label: 'Festive Dresses', href: '#festive-dresses', product: ivoryDress },
 ]
 
 const heroSlides = [
   {
-    product: blackTuxedo,
-    headline: 'Made for the moment.',
-    copy: 'Sharp evening silhouettes with a measured sense of occasion.',
-    cta: 'Explore evening wear',
-    imageIndex: 2,
-    mobileObjectPosition: 'center 30%',
-    desktopObjectPosition: 'center 12%',
-  },
-  {
-    product: silverSherwani,
-    headline: 'Occasion, considered.',
-    copy: 'Refined structure and expressive detail for a modern festive wardrobe.',
-    cta: 'Explore ethnic wear',
+    product: blackGoldLehenga,
+    headline: 'Tradition, styled for today.',
+    copy: 'Graphic detail and sweeping silhouettes for moments worth dressing for.',
+    cta: 'Explore lehenga sets',
     imageIndex: 2,
     mobileObjectPosition: 'center 28%',
-    desktopObjectPosition: 'center 12%',
+    desktopObjectPosition: 'center 18%',
   },
   {
-    product: navyPaisleyShirt,
-    headline: 'Statements, refined.',
-    copy: 'Relaxed proportions and confident detail for after-dark dressing.',
-    cta: 'Explore shirts',
+    product: fuchsiaChaniya,
+    headline: 'For moments worth dressing for.',
+    copy: 'Vivid colour, expressive detail, and an effortless sense of movement.',
+    cta: 'Explore chaniya choli',
     imageIndex: 2,
-    mobileObjectPosition: 'center 26%',
-    desktopObjectPosition: 'center 12%',
+    mobileObjectPosition: 'center 25%',
+    desktopObjectPosition: 'center 16%',
+  },
+  {
+    product: chocolateLehenga,
+    headline: 'Timeless silhouettes. Modern expression.',
+    copy: 'Rich tones and considered pairings for an elegant festive wardrobe.',
+    cta: 'View the collection',
+    imageIndex: 2,
+    mobileObjectPosition: 'center 27%',
+    desktopObjectPosition: 'center 17%',
   },
 ] as const satisfies readonly [HeroSlide, ...HeroSlide[]]
 
@@ -128,69 +127,69 @@ export function HomePage() {
 
         <ProductSection
           compactTop
-          description="A focused edit spanning statement shirts, evening tailoring, and occasion wear."
+          description="A focused edit of vivid chaniya choli, sweeping lehengas, and a refined festive dress."
           eyebrow="New and featured"
           id="featured"
           onOpenCart={openCart}
           products={featuredProducts}
-          title="The Mithel Kapoor edit"
+          title="The Niikurr edit"
         />
       </Container>
 
       <JewelleryEditorialSection
-        anchorIds={['suits-blazers']}
-        detailProduct={ivoryBlazer}
-        featuredProduct={blackEveningSuit}
-        secondaryProduct={blackTuxedo}
+        anchorIds={['lehenga-sets']}
+        detailProduct={fuchsiaChaniya}
+        featuredProduct={blackGoldLehenga}
+        secondaryProduct={chocolateLehenga}
       />
 
       <Container>
         <ProductSection
-          description="Clean evening foundations and embroidered statements, each built around a distinct surface treatment."
-          eyebrow="Everyday statements"
-          id="shirts"
+          description="Colour-led festive silhouettes with distinct panels, borders, and draped pairings."
+          eyebrow="Festive colour"
+          id="chaniya-choli"
           onOpenCart={openCart}
-          products={shirts}
-          title="Shirts with presence"
+          products={chaniyaHighlights}
+          title="Chaniya choli in focus"
         />
       </Container>
 
       <JewelleryDetailsSection
-        anchorIds={['ethnic-wear']}
-        description="Tonal embroidery, botanical surface work, and considered festive silhouettes from the supplied collection."
-        eyebrow="Ethnic and occasion"
+        anchorIds={['festive-dresses']}
+        description="A closer look at the borders, geometric panels, and surface details that define the collection."
+        eyebrow="Festive and occasion"
         items={[
-          { imageIndex: 1, product: silverSherwani },
-          { imageIndex: 1, product: sageBandhgala },
-          { imageIndex: 1, product: plumFestiveSet },
+          { imageIndex: 1, product: ivoryDress },
+          { imageIndex: 1, product: vintageBlackChaniya },
+          { imageIndex: 1, product: mustardChaniya },
         ]}
-        title="Craft in focus"
+        title="Detail, up close"
       />
 
       <section className="overflow-hidden border-y border-ovia-line bg-white" id="instagram">
         <div className="mx-auto grid w-full max-w-360 md:grid-cols-[0.9fr_1.1fr]">
           <img
-            alt={midnightJacket.catalogueName}
+            alt={vintageBlackChaniya.catalogueName}
             className="aspect-[4/3] size-full object-cover object-top md:aspect-auto md:min-h-[32rem]"
-            src={midnightJacket.images[2]}
+            src={vintageBlackChaniya.images[2]}
           />
           <div className="flex items-center px-4 py-12 sm:px-8 sm:py-16 lg:px-20">
             <div className="max-w-xl">
               <Camera aria-hidden="true" className="text-ovia-logo" size={24} strokeWidth={1.6} />
               <p className="type-eyebrow mt-5">Follow the collection</p>
               <h2 className="mt-3 font-display text-[2.65rem] leading-[0.94] font-medium text-ovia-ink sm:text-5xl">
-                See more from Mithel Kapoor
+                See more from Niikurr
               </h2>
               <p className="mt-4 max-w-lg text-sm leading-7 text-ovia-muted sm:text-base">
                 Discover current styling and collection updates on the official Instagram profile.
               </p>
               <a
                 className="mt-7 inline-flex min-h-12 items-center gap-2 border-b border-ovia-primary text-sm font-bold text-ovia-plum"
-                href="https://www.instagram.com/mithelkapoorofficial/"
+                href="https://www.instagram.com/niikurr/"
                 rel="noreferrer"
                 target="_blank"
               >
-                @mithelkapoorofficial
+                @niikurr
                 <ArrowUpRight aria-hidden="true" size={17} />
               </a>
             </div>

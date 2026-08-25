@@ -33,9 +33,9 @@ import {
 } from '../../store/demoStore'
 
 const categories: Array<{ value: ProductCategory; label: string }> = [
-  { value: 'shirts', label: 'Shirts' },
-  { value: 'suits-blazers', label: 'Suits & Blazers' },
-  { value: 'ethnic-wear', label: 'Ethnic Wear' },
+  { value: 'chaniya-choli', label: 'Chaniya Choli' },
+  { value: 'lehenga-sets', label: 'Lehenga Sets' },
+  { value: 'festive-dresses', label: 'Festive Dresses' },
 ]
 
 const jewelleryOptionNames: JewelleryOptionName[] = [
@@ -47,27 +47,27 @@ const jewelleryOptionNames: JewelleryOptionName[] = [
 
 const demoImages = [
   {
-    label: 'Black sequinned tuxedo',
+    label: 'Black and antique-gold lehenga set',
     images: [
-      '/images/mithel-kapoor/products/black-sequinned-tuxedo/hero.webp',
-      '/images/mithel-kapoor/products/black-sequinned-tuxedo/detail.webp',
-      '/images/mithel-kapoor/products/black-sequinned-tuxedo/editorial.webp',
+      '/images/niikurr/products/black-antique-gold-printed-lehenga-set/hero.webp',
+      '/images/niikurr/products/black-antique-gold-printed-lehenga-set/detail.webp',
+      '/images/niikurr/products/black-antique-gold-printed-lehenga-set/editorial.webp',
     ],
   },
   {
-    label: 'Navy paisley statement shirt',
+    label: 'Fuchsia multicolour chaniya choli',
     images: [
-      '/images/mithel-kapoor/products/navy-paisley-statement-shirt/hero.webp',
-      '/images/mithel-kapoor/products/navy-paisley-statement-shirt/detail.webp',
-      '/images/mithel-kapoor/products/navy-paisley-statement-shirt/editorial.webp',
+      '/images/niikurr/products/fuchsia-multicolour-chaniya-choli/hero.webp',
+      '/images/niikurr/products/fuchsia-multicolour-chaniya-choli/detail.webp',
+      '/images/niikurr/products/fuchsia-multicolour-chaniya-choli/editorial.webp',
     ],
   },
   {
-    label: 'Silver botanical sherwani set',
+    label: 'Ivory gold-trim festive dress',
     images: [
-      '/images/mithel-kapoor/products/silver-botanical-sherwani-set/hero.webp',
-      '/images/mithel-kapoor/products/silver-botanical-sherwani-set/detail.webp',
-      '/images/mithel-kapoor/products/silver-botanical-sherwani-set/editorial.webp',
+      '/images/niikurr/products/ivory-gold-trim-festive-dress/hero.webp',
+      '/images/niikurr/products/ivory-gold-trim-festive-dress/detail.webp',
+      '/images/niikurr/products/ivory-gold-trim-festive-dress/editorial.webp',
     ],
   },
 ] as const
@@ -141,7 +141,7 @@ export function BusinessProductEditorPage() {
 
   const [name, setName] = useState(existingProduct?.catalogueName ?? '')
   const [category, setCategory] = useState<ProductCategory>(
-    existingProduct?.category ?? 'shirts',
+    existingProduct?.category ?? 'chaniya-choli',
   )
   const [price, setPrice] = useState(
     existingProduct?.priceInPaise === null || !existingProduct
@@ -447,7 +447,7 @@ export function BusinessProductEditorPage() {
       </Link>
 
       <BusinessPageHeader
-        description="Build a browser-only demo menswear product with a complete image gallery and any relevant size, colour, fit, or length options."
+        description="Build a browser-only demo product with a complete image gallery and any relevant size, colour, fit, or length options."
         eyebrow="Products"
         title={existingProduct ? `Edit ${existingProduct.catalogueName}` : 'Add a product'}
       />

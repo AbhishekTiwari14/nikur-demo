@@ -53,14 +53,14 @@ body {
 }
 
 .customer-shell {
-  --color-ovia-primary: #1a1b18;
-  --color-ovia-logo: #a78956;
-  --color-ovia-plum: #10110f;
-  --color-ovia-blush: #e8e6df;
-  --color-ovia-ivory: #f7f6f2;
-  --color-ovia-ink: #1d1e1b;
-  --color-ovia-muted: #686961;
-  --color-ovia-line: #d9d7cf;
+  --color-ovia-primary: #1e211e;
+  --color-ovia-logo: #d64148;
+  --color-ovia-plum: #6e3037;
+  --color-ovia-blush: #f3eee7;
+  --color-ovia-ivory: #fffefa;
+  --color-ovia-ink: #262421;
+  --color-ovia-muted: #766a65;
+  --color-ovia-line: #e2d8d0;
   --radius-control: 0.5rem;
   --radius-card: 0.5rem;
   --radius-sheet: 1.25rem;
@@ -75,7 +75,7 @@ body {
 }
 
 .customer-shell :focus-visible {
-  outline-color: rgb(26 27 24 / 0.42);
+  outline-color: rgb(110 48 55 / 0.42);
 }
 
 .customer-shell ::selection {

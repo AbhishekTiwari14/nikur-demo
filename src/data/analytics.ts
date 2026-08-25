@@ -66,7 +66,7 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
         eyebrow: 'Stock watch',
         title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Mithel Kapoor alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Niikurr alert.',
       },
       {
         productId: 'jg-real-009',
@@ -109,7 +109,7 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
         eyebrow: 'Stock watch',
         title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Mithel Kapoor alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Niikurr alert.',
       },
       {
         productId: 'jg-real-001',
@@ -149,7 +149,7 @@ export const analyticsSnapshots: Record<AnalyticsPeriod, AnalyticsSnapshot> = {
         eyebrow: 'Stock watch',
         title: 'Sage Embroidered Bandhgala is approaching its demo low-stock threshold.',
         description:
-          'This illustrative stock prompt uses demo inventory and is not a real Mithel Kapoor alert.',
+          'This illustrative stock prompt uses demo inventory and is not a real Niikurr alert.',
       },
       {
         productId: 'jg-real-013',

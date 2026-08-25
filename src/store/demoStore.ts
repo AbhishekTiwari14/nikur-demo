@@ -550,7 +550,7 @@ export const useDemoStore = create<DemoStore>()(
         }),
     }),
     {
-      name: 'jewellgalleria-demo:v1',
+      name: 'niikurr-demo:v1',
       storage: createJSONStorage(() => localStorage),
       version: 4,
       migrate: (persistedState, persistedVersion) =>

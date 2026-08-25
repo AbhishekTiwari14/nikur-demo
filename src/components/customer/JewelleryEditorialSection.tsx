@@ -17,19 +17,19 @@ export function JewelleryEditorialSection({
   secondaryProduct,
 }: JewelleryEditorialSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-[#e9e8e2]" id="editorial">
+    <section className="relative overflow-hidden bg-ovia-blush/70" id="editorial">
       {anchorIds.map((anchorId) => (
         <span aria-hidden="true" className="absolute -top-24" id={anchorId} key={anchorId} />
       ))}
 
       <div className="mx-auto w-full max-w-360 px-4 py-14 sm:px-6 sm:py-20 lg:hidden">
         <div className="max-w-[21rem]">
-          <p className="type-eyebrow">Tailoring, considered</p>
+          <p className="type-eyebrow">Occasion, in motion</p>
           <h2 className="mt-3 font-display text-[2.7rem] leading-[0.9] font-medium tracking-[-0.04em] text-ovia-ink">
-            Modern tailoring. Timeless presence.
+            Sweeping silhouettes. Expressive detail.
           </h2>
           <p className="mt-4 max-w-sm text-sm leading-6 text-ovia-muted">
-            Evening silhouettes built around clean lines, controlled surface detail, and confident proportion.
+            Festive pairings shaped by rich colour, graphic surfaces, and elegant movement.
           </p>
         </div>
 
@@ -51,21 +51,21 @@ export function JewelleryEditorialSection({
         </div>
 
         <Link className="mt-6 inline-flex min-h-11 items-center gap-2 border-b border-ovia-primary/55 text-xs font-bold tracking-[0.08em] text-ovia-plum uppercase" to={`/product/${featuredProduct.slug}`}>
-          View the tailoring edit <ArrowRight aria-hidden="true" size={15} />
+          View the occasion edit <ArrowRight aria-hidden="true" size={15} />
         </Link>
       </div>
 
       <div className="mx-auto hidden w-full max-w-360 grid-cols-12 gap-7 px-8 py-28 lg:grid xl:gap-9 xl:py-32">
         <div className="col-span-4 flex flex-col justify-center pr-8 xl:pr-14">
-          <p className="type-eyebrow">Tailoring, considered</p>
+          <p className="type-eyebrow">Occasion, in motion</p>
           <h2 className="mt-5 font-display text-[clamp(4rem,5vw,5.8rem)] leading-[0.86] font-medium tracking-[-0.045em] text-ovia-ink">
-            Modern tailoring. Timeless presence.
+            Sweeping silhouettes. Expressive detail.
           </h2>
           <p className="mt-7 max-w-sm text-base leading-8 text-ovia-muted">
-            Evening silhouettes built around clean lines, controlled surface detail, and confident proportion.
+            Festive pairings shaped by rich colour, graphic surfaces, and elegant movement.
           </p>
           <Link className="mt-9 inline-flex w-fit min-h-11 items-center gap-2 border-b border-ovia-primary/55 text-xs font-bold tracking-[0.1em] text-ovia-plum uppercase" to={`/product/${featuredProduct.slug}`}>
-            View the tailoring edit <ArrowRight aria-hidden="true" size={15} />
+            View the occasion edit <ArrowRight aria-hidden="true" size={15} />
           </Link>
         </div>
 

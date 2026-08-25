@@ -10,9 +10,9 @@ interface MobileNavigationDrawerProps {
 
 const navigation = [
   ['Featured', '/#featured'],
-  ['Shirts', '/#shirts'],
-  ['Suits & Blazers', '/#suits-blazers'],
-  ['Ethnic Wear', '/#ethnic-wear'],
+  ['Chaniya Choli', '/#chaniya-choli'],
+  ['Lehenga Sets', '/#lehenga-sets'],
+  ['Festive Dresses', '/#festive-dresses'],
 ] as const
 
 export function MobileNavigationDrawer({ isOpen, onClose }: MobileNavigationDrawerProps) {
@@ -35,7 +35,7 @@ export function MobileNavigationDrawer({ isOpen, onClose }: MobileNavigationDraw
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Mithel Kapoor navigation">
+        <div className="fixed inset-0 z-70" role="dialog" aria-modal="true" aria-label="Niikurr navigation">
           <motion.button animate={{ opacity: 1 }} aria-label="Close navigation" className="absolute inset-0 bg-ovia-ink/35 backdrop-blur-[2px]" exit={{ opacity: 0 }} initial={{ opacity: 0 }} onClick={onClose} type="button" />
           <motion.aside
             animate={{ x: 0 }}
@@ -45,11 +45,11 @@ export function MobileNavigationDrawer({ isOpen, onClose }: MobileNavigationDraw
             transition={{ duration: prefersReducedMotion ? 0 : 0.26, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="flex items-center justify-between border-b border-ovia-line px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4">
-              <Link aria-label="Mithel Kapoor home" className="flex items-center gap-2" onClick={onClose} to="/"><img alt="" className="size-10 object-contain mix-blend-multiply" src="/brand/mithel-kapoor-logo.png" /><span className="text-xs font-semibold uppercase">Mithel Kapoor</span></Link>
+              <Link aria-label="Niikurr home" className="flex items-center gap-2" onClick={onClose} to="/"><img alt="" className="size-10 object-contain mix-blend-multiply" src="/brand/niikurr-logo.png" /><span className="text-xs font-semibold uppercase">Niikurr</span></Link>
               <button aria-label="Close navigation" className="flex size-12 items-center justify-center rounded-full text-ovia-plum hover:bg-ovia-blush/55" onClick={onClose} type="button"><X aria-hidden="true" size={21} /></button>
             </div>
             <nav className="flex-1 overflow-y-auto px-5 py-6">
-              <p className="type-eyebrow">Mithel Kapoor catalogue</p>
+              <p className="type-eyebrow">Niikurr catalogue</p>
               <div className="mt-4 divide-y divide-ovia-line">
                 {navigation.map(([label, href]) => (
                   <a className="flex min-h-14 items-center justify-between font-display text-2xl text-ovia-ink" href={href} key={href} onClick={onClose}>
@@ -73,7 +73,7 @@ export function MobileNavigationDrawer({ isOpen, onClose }: MobileNavigationDraw
                 <span className="mt-2 block text-xs leading-5 text-white/70">Manage products, inventory, orders and analytics behind the storefront.</span>
               </Link>
             </nav>
-            <p className="border-t border-ovia-line px-5 py-4 text-[0.64rem] leading-5 text-ovia-muted">Private concept for Mithel Kapoor</p>
+            <p className="border-t border-ovia-line px-5 py-4 text-[0.64rem] leading-5 text-ovia-muted">Private concept for Niikurr</p>
           </motion.aside>
         </div>
       )}
